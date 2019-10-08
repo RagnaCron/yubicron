@@ -2,6 +2,7 @@ from django.shortcuts import render
 from cronjob.forms.cronjob.forms import AuthenticateForm, TitleForm
 from cronjob.models import CronJob
 
+
 # Create your views here.
 
 
@@ -24,12 +25,14 @@ def createCronJob(request):
 					cronJob.successMessage = True
 				if m == 2:
 					cronJob.automaticJobStopperWhenToManyFailures = True
-		if not times.isEmpty():
-			pass
 
+		if not times.isEmpty():
+			print(times)
 
 	return render(request, 'cronjob/cronjob.html', context)
 
 
-def isCheckbox(Bool):
-	pass
+def isCheckbox(box):
+	if box.value:
+		return True
+	return False

@@ -27,7 +27,7 @@
 
             <h2>Time to run</h2>
             <label>
-                <input type="radio" name="times" value="{{ minute }}">Every
+                <input type="radio" name="times" value="{{ minute }}" required>Every
                 <select name="minute" id="times">
                      {% for _ in 60|intRange %}
                          <option value="{{ forloop.counter }}">{{ forloop.counter }}</option>
@@ -36,12 +36,12 @@
             </label><br>
 
             <label>
-                <input type="radio" name="times" value="{{ day }}">Every day at
+                <input type="radio" name="times" value="{{ day }}" required>Every day at
                 <input type="time" name="times" value="{{ hours }}">
             </label><br>
 
             <label>
-                <input type="radio" name="times" value="{{ month }}">Every month
+                <input type="radio" name="times" value="{{ month }}" required>Every month
                 <select name="month">
                     {% for i in 27|intRange %}
                         <option value="{{ i }}">{{ forloop.counter }}.</option>
@@ -51,7 +51,7 @@
             </label><br>
 
             <label>
-                <input type="radio" name="times" value="{{ userDefined }}">User defined
+                <input type="radio" name="times" value="{{ userDefined }}" required>User defined
             </label>
 
         </section>
