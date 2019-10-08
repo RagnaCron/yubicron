@@ -5,6 +5,68 @@
     <title>Web Cron</title>
 </head>
 <body>
-    <h1>Hello, world!</h1>
+
+    <form  method="post" >
+        {% csrf_token %}
+
+        <section>
+
+            <h2>Title, Address</h2>
+            <label>
+                <input type="text" name="Title" value="{{ title }}">
+            </label>
+            <br>
+            <label>
+                <input type="url" name="URL" value="{{ url }}">
+            </label>
+            {#            <input type="hidden" name="createUser" value="{{ next }}" />#}
+
+        </section>
+
+        <section>
+                {# TODO: Make it so that if not set, no input possible #}
+
+            <h2><label>
+                <input type="radio" name="Authentication" value="{{ authenticate }}">
+            </label>Needs HTTP-Authentication</h2>
+            <label>Username<input type="text" name="UserName" value="{{ username }}"></label>
+            <label>Password<input type="password" name="UserPassword" value="{{ password }}"></label>
+
+        </section>
+
+        <section>
+            <h2>Time to run</h2>
+            <label>
+                <input type="radio" name="" value="{{ seconds }}">
+            </label><br>
+            <label>
+                <input type="radio" name="" value="{{ minutes }}">
+            </label><br>
+            <label>
+                <input type="radio" name="" value="{{ days }}">
+            </label><br>
+            <label>
+                <input type="radio" name="" value="{{ year }}">
+            </label>
+        </section>
+
+        <section>
+            <h2>Message</h2>
+            <label>
+                <input type="text">
+            </label>
+        </section>
+
+        <section>
+            <h2>General</h2>
+            <label>
+                <input type="text">
+            </label>
+        </section>
+        <section>
+            <input type="submit">
+        </section>
+    </form>
+
 </body>
 </html>
