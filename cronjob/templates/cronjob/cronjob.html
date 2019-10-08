@@ -7,7 +7,7 @@
 </head>
 <body>
 
-    <form  method="post" >
+    <form method="post">
         {% csrf_token %}
 
         <section>
@@ -18,14 +18,26 @@
         <section>
             {# TODO: Make it so that if not set, no input possible #}
             <div><h2>{{ authenticate.box }} Needs HTTP-Authentication</h2></div>
-            <div>{{ authenticate.username }}</div>
+            <div>
+                {{ authenticate.username.label_tag }}
+                {{ authenticate.username }}
+            </div>
             <br>
-            <div>{{ authenticate.password }}</div>
+            <div>
+                {{ authenticate.password.label_tag }}
+                {{ authenticate.password }}
+            </div>
         </section>
 
         <section>
 
             <h2>Time to run</h2>
+
+{#            {{ minutes.non_field_errors }}#}
+{#            <div>#}
+{#                {{ minutes }}#}
+{#            </div>#}
+
             <label>
                 <input type="radio" name="times" value="{{ minute }}" required>Every
                 <select name="minute" id="times">
@@ -33,12 +45,16 @@
                          <option value="{{ forloop.counter }}">{{ forloop.counter }}</option>
                      {% endfor %}
                 </select> minute(s)
-            </label><br>
+            </label>
+
+            <br>
 
             <label>
                 <input type="radio" name="times" value="{{ day }}" required>Every day at
                 <input type="time" name="times" value="{{ hours }}">
-            </label><br>
+            </label>
+
+            <br>
 
             <label>
                 <input type="radio" name="times" value="{{ month }}" required>Every month
@@ -48,7 +64,9 @@
                     {% endfor %}
                 </select> at
                 <input type="time" name="hours" value="{{ hours }}">
-            </label><br>
+            </label>
+
+            <br>
 
             <label>
                 <input type="radio" name="times" value="{{ userDefined }}" required>User defined
@@ -57,29 +75,41 @@
         </section>
 
         <section>
+
             <h2>Message</h2>
+            {{ userMessage.non_field_errors }}
             <div>
-                <input id="failedJobsLabel" type="checkbox" name="messages" value="0">
-                <label for="failedJobsLabel">Failed Jobs</label>
+                {{ userMessage.failedJob.error_messages }}
+                {{ userMessage.failedJob }}
+                <label for="{{ userMessage.failedJob.id_for_label }}">Failed Job</label>
             </div>
             <div>
-                <input id="successfulJobsLabel" type="checkbox" name="messages" value="1">
-                <label for="successfulJobsLabel">Successful Jobs</label>
+                {{ userMessage.successfulJob.error_messages }}
+                {{ userMessage.successfulJob }}
+                <label for="{{ userMessage.successfulJob.id_for_label }}">Successful Job</label>
             </div>
             <div>
-                <input id="stopJobLabel" type="checkbox" name="messages" value="2">
-                <label for="stopJobLabel">Automatically stop the job if to many failures</label>
+                {{ userMessage.stopJob.error_messages }}
+                {{ userMessage.stopJob }}
+                <label for="{{ userMessage.stopJob.id_for_label }}">Automatically stop the job if to many failures happen</label>
             </div>
+
         </section>
 
         <section>
             <h2>General</h2>
-                <input id="saveMessageLabel" type="checkbox" name="saveMessage" value="{{ saveMessage }}">
-                <label for="saveMessageLabel">Save message</label>
+            {{ general.non_field_errors }}
+                <div>
+                    {{ general.willSaveMessage.error_messages }}
+                    {{ general.willSaveMessage }}
+                    <label for="{{ general.willSaveMessage.id_for_label }}">Save message</label>
+                </div>
         </section>
         <br>
         <section>
-                <input name="input" type="submit" value="Make Cron-Job">
+
+            <p></p>
+            <input name="input" type="submit" value="Make Cron-Job">
 
         </section>
     </form>

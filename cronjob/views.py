@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from cronjob.forms.cronjob.forms import AuthenticateForm, TitleForm
+from cronjob.forms.cronjob.forms import AuthenticateForm, TitleForm, UserMessageForm, GeneralForm, MinutesForm
 from cronjob.models import CronJob
 
 
@@ -8,31 +8,15 @@ from cronjob.models import CronJob
 
 def createCronJob(request):
 	# TODO: - POST evaluation -> create model entry to CronJob
-	title = TitleForm()
-	authenticate = AuthenticateForm()
-	context = {'title': title, 'authenticate': authenticate}
-	if request.method == 'POST':
-		cronJob = CronJob()
-		title = TitleForm(request.POST)
-		authenticate = AuthenticateForm(request.POST)
-		times = request.POST.getlist('times')
-		messages = request.POST.getlist('messages')
-		if not messages.isEmpty():
-			for m in messages:
-				if m == 0:
-					cronJob.failMessage = True
-				if m == 1:
-					cronJob.successMessage = True
-				if m == 2:
-					cronJob.automaticJobStopperWhenToManyFailures = True
-
-		if not times.isEmpty():
-			print(times)
+	title = TitleForm(request.POST or None)
+	authenticate = AuthenticateForm(request.POST or None)
+	userMessage = UserMessageForm(request.POST or None)
+	minutes = MinutesForm(request.POST or None)
+	general = GeneralForm(request.POST or None)
+	context = {'title': title, 'authenticate': authenticate,
+	           'minutes': minutes, 'userMessage': userMessage,
+	           'general': general}
+	# if request.method == 'POST':
+	# 	cronJob = CronJob()
 
 	return render(request, 'cronjob/cronjob.html', context)
-
-
-def isCheckbox(box):
-	if box.value:
-		return True
-	return False
