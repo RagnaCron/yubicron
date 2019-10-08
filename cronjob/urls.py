@@ -3,5 +3,5 @@ from . import views
 
 app_name = 'cronjob'
 urlpatterns = [
-    path('', views.index, name='index'),
+    path('', views.createCronJob, name='createCronJob'),
 ]

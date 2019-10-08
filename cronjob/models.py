@@ -13,8 +13,8 @@ class CronJob(models.Model):
 
 	executionTime = models.CharField(max_length=30)
 
-	failMessage = models.TextField
-	successMessage = models.TextField
+	failMessage = models.BooleanField
+	successMessage = models.BooleanField
 	automaticJobStopperWhenToManyFailures = models.BooleanField
 
 	willSaveMessage = models.BooleanField
