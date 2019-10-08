@@ -11,28 +11,22 @@
         {% csrf_token %}
 
         <section>
-
             <h2>Title, Address</h2>
-            <label>
-                <input type="text" name="Title" value="{{ title }}">
-            </label>
-            <br>
-            <label>
-                <input type="url" name="URL" value="{{ url }}">
-            </label>
-            {#            <input type="hidden" name="createUser" value="{{ next }}" />#}
-
+            <input type="text" name="Title" value="{{ title }}" placeholder="Title">
+            <br><br>
+            <input type="url" name="URL" value="{{ url }}" placeholder="URL">
         </section>
 
         <section>
                 {# TODO: Make it so that if not set, no input possible #}
-
-            <h2><label>
-                <input type="radio" name="authenticate" value="{{ authenticate }}">
-            </label>Needs HTTP-Authentication</h2>
+            <h2>
+                <input id="authenticate" type="checkbox" name="authenticate" value="{{ authenticate }}">
+                <label for="authenticate"></label>Needs HTTP-Authentication
+            </h2>
 {#            {% if authenticate %}#}
-                <label>Username<input type="text" name="UserName" value="{{ username }}"></label>
-                <label>Password<input type="password" name="UserPassword" value="{{ password }}"></label>
+                <input type="text" name="UserName" value="{{ username }}" placeholder="Username">
+                <br><br>
+                <input type="password" name="UserPassword" value="{{ password }}" placeholder="Password">
 {#            {% endif %}#}
         </section>
 
@@ -43,42 +37,57 @@
             <label for="minutes">
                 <input type="radio" name="time" value="{{ minutes }}">Every
                 <select name="time" id="minutes">
-                     {% for i in 60|intRange %}
+                     {% for _ in 60|intRange %}
                          <option value="{{ forloop.counter }}">{{ forloop.counter }}</option>
                      {% endfor %}
                 </select> minute(s)
             </label><br>
 
             <label for="day">
-                <input type="radio" name="time" value="{{ days }}">Every day at
-                <input type="time" id="minutes" name="time" value="11:00"  min="00:00" max="23:59" required>
+                <input id="day" type="radio" name="time" value="{{ days }}">Every day at
+                <input id="day" type="time" name="time" value="11:00" required>
             </label><br>
 
-            <label>
-                <input type="radio" name="time" value="{{ month }}">Every month at
-
+            <label for="month">
+                <input id="month" type="radio" name="time" value="{{ month }}">Every month
+                <select name="time" id="month">
+                    {% for _ in 27|intRange %}
+                        <option value="{{ forloop.counter }}">{{ forloop.counter }}.</option>
+                    {% endfor %}
+                </select> at
+                <input id="month" type="time" name="time" value="{{ time }}">
             </label><br>
 
-            <label>
-                <input type="radio" name="time" value="{{ specific }}">User specific
+            <label for="userDefined">
+                <input id="userDefined" type="radio" name="time" value="{{ specific }}">User defined
             </label>
         </section>
 
         <section>
             <h2>Message</h2>
-            <label>
-                <input type="text">
-            </label>
+            <div>
+                <input type="checkbox" id="failedJobs" name="failedJobs" value="{{ failedJobs }}">
+                <label for="failedJobs">Failed Jobs</label>
+            </div>
+            <div>
+                <input type="checkbox" id="successfulJobs" name="successfulJobs" value="{{ successfulJobs }}">
+                <label for="successfulJobs">Successful Jobs</label>
+            </div>
+            <div>
+                <input type="checkbox" id="stopJob" name="stopJob" value="{{ stopJob }}">
+                <label for="stopJob">Automatically stop the job if to many failures</label>
+            </div>
         </section>
 
         <section>
             <h2>General</h2>
-            <label>
-                <input type="text">
-            </label>
+                <input type="checkbox" id="saveMessage" name="saveMessage" value="{{ saveMessage }}">
+                <label for="saveMessage">Save message</label>
         </section>
+        <br>
         <section>
-            <input type="submit" value="Make Cron-Job">
+                <input type="submit" value="Make Cron-Job">
+
         </section>
     </form>
 
