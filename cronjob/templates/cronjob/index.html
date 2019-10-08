@@ -12,21 +12,23 @@
 
         <section>
             <h2>Title, Address</h2>
-            <input type="text" name="Title" value="{{ title }}" placeholder="Title">
+            <input type="text" name="title" value="{{ title }}" placeholder="Title">
             <br><br>
-            <input type="url" name="URL" value="{{ url }}" placeholder="URL">
+            <input type="url" name="url" value="{{ url }}" placeholder="URL">
         </section>
 
         <section>
                 {# TODO: Make it so that if not set, no input possible #}
             <h2>
                 <input id="authenticate" type="checkbox" name="authenticate" value="{{ authenticate }}">
+{#                {{ form.display }}#}
                 <label for="authenticate"></label>Needs HTTP-Authentication
             </h2>
-{#            {% if authenticate %}#}
-                <input type="text" name="UserName" value="{{ username }}" placeholder="Username">
+
+{#            {% if form.display.has_changed %}#}
+                <input type="text" name="username" value="{{ username }}" placeholder="Username">
                 <br><br>
-                <input type="password" name="UserPassword" value="{{ password }}" placeholder="Password">
+                <input type="password" name="password" value="{{ password }}" placeholder="Password">
 {#            {% endif %}#}
         </section>
 
