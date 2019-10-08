@@ -4,4 +4,5 @@ from django.shortcuts import render
 
 
 def index(request):
+	# TODO: - POST
 	return render(request, 'cronjob/index.html', {})

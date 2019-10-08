@@ -30,9 +30,10 @@
             <h2><label>
                 <input type="radio" name="authenticate" value="{{ authenticate }}">
             </label>Needs HTTP-Authentication</h2>
-            <label>Username<input type="text" name="UserName" value="{{ username }}"></label>
-            <label>Password<input type="password" name="UserPassword" value="{{ password }}"></label>
-
+{#            {% if authenticate %}#}
+                <label>Username<input type="text" name="UserName" value="{{ username }}"></label>
+                <label>Password<input type="password" name="UserPassword" value="{{ password }}"></label>
+{#            {% endif %}#}
         </section>
 
         <section>
