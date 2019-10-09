@@ -40,17 +40,14 @@
             <br>
 
             {{ hours.non_field_errors }}
-            {{ minutes.non_field_errors }}
             <input type="radio" name="id_times" value="hours" required> Every day at
-            {{ hours.times }} : {{ minutes.times }}
+            {{ hours.hours }} : {{ hours.minutes }}
 
             <br>
 
             {{ days.non_field_errors }}
-            {{ hours.non_field_errors }}
-            {{ minutes.non_field_errors }}
             <input type="radio" name="id_times" value="days" required> Every month
-            {{ days.times }} at {{ hours.times }} : {{ minutes.times }}
+            {{ days.days }} at {{ days.hours }} : {{ days.minutes }}
 
             <br>
 
