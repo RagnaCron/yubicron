@@ -13,6 +13,7 @@ def createCronJob(request):
 	userMessage = UserMessageForm(request.POST or None)
 	minutes = MinutesForm(request.POST or None)
 	general = GeneralForm(request.POST or None)
+
 	context = {'title': title, 'authenticate': authenticate,
 	           'minutes': minutes, 'userMessage': userMessage,
 	           'general': general}

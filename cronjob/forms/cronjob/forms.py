@@ -7,7 +7,7 @@ class TitleForm(forms.Form):
 
 
 class AuthenticateForm(forms.Form):
-	box = forms.BooleanField(widget=forms.CheckboxInput, required=False)
+	box = forms.BooleanField(required=False)
 	username = forms.CharField(max_length=30, required=False,
 	                           label_suffix=' ', label='Username')
 	password = forms.CharField(max_length=20, widget=forms.PasswordInput,
@@ -15,19 +15,18 @@ class AuthenticateForm(forms.Form):
 	                           label_suffix=' ')
 
 
-MINUTES = [(0, 0), (1, 1)]
+MINUTES = [tuple([x, x]) for x in range(1, 61)]
 
 
 class MinutesForm(forms.Form):
-	times = forms.ChoiceField(widget=forms.RadioSelect, choices=(0, 'Every'), required=True)
-	# minutes = forms.ChoiceField(choices=MINUTES)
+	times = forms.ChoiceField(choices=MINUTES)
 
 
 class UserMessageForm(forms.Form):
-	failedJob = forms.BooleanField(widget=forms.CheckboxInput, required=False, label_suffix=' ')
-	successfulJob = forms.BooleanField(widget=forms.CheckboxInput, required=False, label_suffix=' ')
-	stopJob = forms.BooleanField(widget=forms.CheckboxInput, required=False)
+	failedJob = forms.BooleanField(required=False, label_suffix=' ')
+	successfulJob = forms.BooleanField(required=False, label_suffix=' ')
+	stopJob = forms.BooleanField(required=False)
 
 
 class GeneralForm(forms.Form):
-	willSaveMessage = forms.BooleanField(widget=forms.CheckboxInput, required=False, label_suffix=' ')
+	willSaveMessage = forms.BooleanField(required=False, label_suffix=' ')

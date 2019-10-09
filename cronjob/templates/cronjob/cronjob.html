@@ -33,31 +33,23 @@
 
             <h2>Time to run</h2>
 
-{#            {{ minutes.non_field_errors }}#}
-{#            <div>#}
-{#                {{ minutes }}#}
-{#            </div>#}
-
+            {{ minutes.non_field_errors }}
             <label>
-                <input type="radio" name="times" value="{{ minute }}" required>Every
-                <select name="minute" id="times">
-                     {% for _ in 60|intRange %}
-                         <option value="{{ forloop.counter }}">{{ forloop.counter }}</option>
-                     {% endfor %}
-                </select> minute(s)
+                <input type="radio" name="id_times" value="{{ minute }}" required>Every
+                {{ minutes.times }} minute(s)
             </label>
 
             <br>
 
             <label>
-                <input type="radio" name="times" value="{{ day }}" required>Every day at
-                <input type="time" name="times" value="{{ hours }}">
+                <input type="radio" name="id_times" value="{{ day }}" required>Every day at
+                <input type="time" name="id_times" value="{{ hours }}">
             </label>
 
             <br>
 
             <label>
-                <input type="radio" name="times" value="{{ month }}" required>Every month
+                <input type="radio" name="id_times" value="{{ month }}" required>Every month
                 <select name="month">
                     {% for i in 27|intRange %}
                         <option value="{{ i }}">{{ forloop.counter }}.</option>
@@ -69,7 +61,7 @@
             <br>
 
             <label>
-                <input type="radio" name="times" value="{{ userDefined }}" required>User defined
+                <input type="radio" name="id_times" value="{{ userDefined }}" required>User defined
             </label>
 
         </section>
