@@ -34,35 +34,27 @@
             <h2>Time to run</h2>
 
             {{ minutes.non_field_errors }}
-            <input type="radio" name="id_times" value="True" required>
+            <input type="radio" name="id_times" value="minutes" required>
             {{ minutes }} minute(s)
 
             <br>
 
-            <label>
-                <input type="radio" name="id_times" value="True" required> Every day at
-                {{ hours.times }} : {{ minutes.times }}
-{#                <input type="time" name="id_times" value="{{ hours }}">#}
-            </label>
+            {{ hours.non_field_errors }}
+            {{ minutes.non_field_errors }}
+            <input type="radio" name="id_times" value="hours" required> Every day at
+            {{ hours.times }} : {{ minutes.times }}
 
             <br>
 
-{#            <label>#}
-            <input type="radio" name="id_times" value="True" required> Every month
-            {{ months.times }} at {{ hours.times }} : {{ minutes.times }}
-{#                <select name="month">#}
-{#                    {% for i in 27|intRange %}#}
-{#                        <option value="{{ i }}">{{ forloop.counter }}.</option>#}
-{#                    {% endfor %}#}
-{#                </select> at#}
-{#                <input type="time" name="id_times" value="{{ dayTime }}">#}
-{#            </label>#}
+            {{ days.non_field_errors }}
+            {{ hours.non_field_errors }}
+            {{ minutes.non_field_errors }}
+            <input type="radio" name="id_times" value="days" required> Every month
+            {{ days.times }} at {{ hours.times }} : {{ minutes.times }}
 
             <br>
 
-            <label>
-                <input type="radio" name="id_times" value="True" required> User defined
-            </label>
+            <input type="radio" name="id_times" value="userDefined" required> User defined
 
         </section>
 

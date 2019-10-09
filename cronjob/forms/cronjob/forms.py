@@ -15,26 +15,24 @@ class AuthenticateForm(forms.Form):
 	                           label_suffix=' ')
 
 
-MINUTES = [tuple([x, x]) for x in range(1, 61)]
-HOURS = [tuple([x, x]) for x in range(1, 24)]
-DAYS = [tuple([x, x]) for x in range(1, 32)]
-MONTHS = [tuple([x, x]) for x in range(1, 13)]
+MINUTES = ((str(x), str(x)) for x in range(0, 60))
+HOURS = ((str(x), str(x)) for x in range(0, 24))
+DAYS = ((str(x), str(x)) for x in range(1, 32))
 
 
 class MinutesForm(forms.Form):
-	times = forms.ChoiceField(choices=MINUTES, label='Every', label_suffix=' ')
+	times = forms.ChoiceField(choices=MINUTES, label='Every',
+	                          label_suffix=' ', required=False)
 
 
 class HoursFrom(forms.Form):
-	times = forms.ChoiceField(choices=HOURS, label='', label_suffix=' ')
+	times = forms.ChoiceField(choices=HOURS, label='',
+	                          label_suffix=' ', required=False)
 
 
 class DaysFrom(forms.Form):
-	times = forms.ChoiceField(choices=DAYS, label='', label_suffix=' ')
-
-
-class MonthsFrom(forms.Form):
-	times = forms.ChoiceField(choices=MONTHS, label='', label_suffix=' ')
+	times = forms.ChoiceField(choices=DAYS, label='', initial=1,
+	                          label_suffix=' ', required=False)
 
 
 class UserMessageForm(forms.Form):

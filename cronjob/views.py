@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from cronjob.forms.cronjob.forms import AuthenticateForm, TitleForm, UserMessageForm, GeneralForm
-from cronjob.forms.cronjob.forms import MinutesForm, HoursFrom, DaysFrom, MonthsFrom
+from cronjob.forms.cronjob.forms import MinutesForm, HoursFrom, DaysFrom
 from cronjob.models import CronJob
 
 
@@ -9,40 +9,66 @@ from cronjob.models import CronJob
 
 def createCronJob(request):
 	# TODO: - POST evaluation -> create model entry to CronJob
-	title = TitleForm(request.POST or None)
-	authenticate = AuthenticateForm(request.POST or None)
-	userMessage = UserMessageForm(request.POST or None)
-	minutes = MinutesForm(request.POST or None)
-	hours = HoursFrom(request.POST or None)
-	days = DaysFrom(request.POST or None)
-	months = DaysFrom(request.POST or None)
-	general = GeneralForm(request.POST or None)
-
-	context = {'title': title, 'authenticate': authenticate,
-	           'minutes': minutes, 'hours': hours,
-	           'days': days, 'months': months,
-	           'userMessage': userMessage, 'general': general}
-	# if request.method == 'POST':
-	# 	cronJob = CronJob()
-
+	context = {}
+	if request.method == 'POST':
+		context = renderCronJob(request.POST)
+		cleanData = cleanedPOSTRequests(context)
+		title = cleanData['title']['title']
+		url = cleanData['title']['url']
+		authenticate = cleanData['authenticate']['box']
+		username = cleanData['authenticate']['username']
+		password = cleanData['authenticate']['password']
+		executionTime = calcSchedule(request, cleanData)
+		print(executionTime)
+		print(cleanData)
+		# string = 'exe {0}, title: {1}, url: {2}, auth: {3}, username: {4}, password: {5}'\
+		# 	.format(executionTime, title, url, authenticate, username, password)
+		# print(string)
+	else:
+		context = renderCronJob(None)
 	return render(request, 'cronjob/cronjob.html', context)
 
 
-# Original Gangster Programmer of calcSchedule(request): Vincenz Gregori
-def calcSchedule(request):
-	if request.POST.get("rb", "") == "1":
-		rv = "*/" + request.POST.get("Minute1", "") + " * * * *"
-		return rv
-	elif request.POST.get("rb", "") == "2":
-		rv = request.POST.get("Minute2", "") + " " + request.POST.get("Hour2", "") + " * * *"
-		return rv
-	elif request.POST.get("rb", "") == "3":
-		rv = request.POST.get("Minute3", "") + " " + request.POST.get("Hour3", "") + " " + request.POST.get("Day3",
-                                                                                              "") + " * *"
-		return rv
-	elif request.POST.get("rb", "") == "4":
-		rv = request.POST.get("Hour3", "")
-		return rv
+def cleanedPOSTRequests(context):
+	newContext = {}
+	for key in context.keys():
+		if context[key].is_valid():
+			newContext[key] = context[key].cleaned_data
+	return newContext
+
+
+def renderCronJob(request):
+	title = TitleForm(request)
+	authenticate = AuthenticateForm(request)
+	userMessage = UserMessageForm(request)
+	minutes = MinutesForm(request)
+	hours = HoursFrom(request)
+	days = DaysFrom(request)
+	general = GeneralForm(request)
+
+	context = {'title': title, 'authenticate': authenticate,
+	           'minutes': minutes, 'hours': hours, 'days': days,
+	           'userMessage': userMessage, 'general': general}
+	return context
+
+
+# Original Gangster Programmer (OGP) of calcSchedule(request): Vincenz Gregori
+# OGP changer: Manuel Werder
+def calcSchedule(request, cleanData):
+	if request.POST.get('id_times') == 'minutes':
+		minutes = cleanData['minutes']['times']
+		return minutes + ' * * * *'
+	elif request.POST.get('id_times') == 'hours':
+		minutes = cleanData['minutes']['times']
+		hours = cleanData['hours']['times']
+		return minutes + ' ' + hours + ' * * *'
+	elif request.POST.get('id_times') == 'days':
+		minutes = cleanData['minutes']['times']
+		hours = cleanData['hours']['times']
+		days = cleanData['days']['times']
+		return minutes + ' ' + hours + ' ' + days + ' * *'
+	elif request.POST.get('id_times') == 'userDefined':
+		return '* * * * *'
 
 
 # Original Gangster Programmer of checkCheckbox(cb): Vincenz Gregori
