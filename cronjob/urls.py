@@ -5,6 +5,6 @@ app_name = 'cronjob'
 
 urlpatterns = [
     path('', cronhomeview.home, name='home'),
-    path('/create', cronjobview.createCronJob, name='createCronJob'),
-    path('/login', loginview.userLogin, name='login'),
+    path('create', cronjobview.createCronJob, name='createCronJob'),
+    path('login', loginview.userLogin, name='login'),
 ]

@@ -1,45 +1,46 @@
+from django.contrib import auth
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from cronjob.forms.cronjob.cronjobforms import AuthenticateForm, TitleForm, UserMessageForm, GeneralForm
 from cronjob.forms.cronjob.cronjobforms import MinutesForm, HoursFrom, DaysFrom
+from cronjob.models import CronJob
 
 
 # Create your views here.
 
-# @login_required(redirect_field_name='login', login_url='/login')
+
+@login_required(redirect_field_name='login', login_url='/login')
 def createCronJob(request):
 	# TODO: - POST evaluation -> create model entry to CronJob
-	context = renderCronJob(None)
-	if request.method == 'POST':
-		title = TitleForm(data=request.POST)
-		authenticate = AuthenticateForm(data=request.POST)
-		user_message = UserMessageForm(data=request.POST)
-		minutes = MinutesForm(data=request.POST)
-		hours = HoursFrom(data=request.POST)
-		days = DaysFrom(data=request.POST)
-		general = GeneralForm(data=request.POST)
-		execution_time = calcSchedule(request, minutes, hours, days)
-		context = {'title': title, 'authenticate': authenticate,
-		           'minutes': minutes, 'hours': hours, 'days': days,
-		           'userMessage': user_message, 'general': general}
-		return render(request, 'cronjob/cronjob.html', context)
-
-	return render(request, 'cronjob/cronjob.html', context)
-
-
-def renderCronJob(request):
-	title = TitleForm(data=request)
-	authenticate = AuthenticateForm(data=request)
-	user_message = UserMessageForm(data=request)
-	minutes = MinutesForm(data=request)
-	hours = HoursFrom(data=request)
-	days = DaysFrom(data=request)
-	general = GeneralForm(data=request)
-
+	title = TitleForm(data=request.POST or None)
+	authenticate = AuthenticateForm(data=request.POST or None)
+	minutes = MinutesForm(data=request.POST or None)
+	hours = HoursFrom(data=request.POST or None)
+	days = DaysFrom(data=request.POST or None)
+	user_message = UserMessageForm(data=request.POST or None)
+	general = GeneralForm(data=request.POST or None)
 	context = {'title': title, 'authenticate': authenticate, 'minutes': minutes,
 	           'hours': hours, 'days': days,
-	           'user_essage': user_message, 'general': general}
-	return context
+	           'user_message': user_message, 'general': general}
+	if request.method == 'POST':
+		execution_time = calcSchedule(request, minutes, hours, days)
+		cron_job = CronJob(
+			user=auth.get_user(request),
+			title=title.title.clean(),
+			url=title.url.clean(),
+			needs_authentication=authenticate.box.clean(),
+			username=authenticate.username.clean(),
+			password=authenticate.password.clean(),
+			execution_time=execution_time,
+			fail_message=user_message.failed_job.clean(),
+			success_message=user_message.successful_job,
+			automatic_job_stopper_when_to_many_failures=user_message.stop_job,
+			will_save_message=general.will_save_message
+		)
+		cron_job.save()
+		return redirect(request, 'cronjob/home.html', context)
+
+	return render(request, 'cronjob/cronjob.html', context)
 
 
 # Original Gangster Programmer (OGP) of calcSchedule(request): Vincenz Gregori

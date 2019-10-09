@@ -2,15 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a6c3f724-2e45-49fb-97e0-181b523cd793" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/cronjob/templates/cronjob/cronhome.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cronjob/templates/cronjob/cronuserlogin.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cronjob/views/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cronjob/views/cronhomeview.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cronjob/views/loginview.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cronjob/forms/cronjob/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/cronjob/forms/cronjob/cronjobforms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cronjob/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/cronjob/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cronjob/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/cronjob/views/cronjobview.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cronjob/views/cronhomeview.py" beforeDir="false" afterPath="$PROJECT_DIR$/cronjob/views/cronhomeview.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cronjob/views/cronjobview.py" beforeDir="false" afterPath="$PROJECT_DIR$/cronjob/views/cronjobview.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -153,7 +148,7 @@
       <workItem from="1570567721427" duration="4468000" />
       <workItem from="1570595531230" duration="2911000" />
       <workItem from="1570601071883" duration="29037000" />
-      <workItem from="1570639967088" duration="9708000" />
+      <workItem from="1570639967088" duration="11375000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1570458743703</created>
@@ -337,7 +332,14 @@
       <option name="project" value="LOCAL" />
       <updated>1570649738400</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="login, cronhome setup">
+      <created>1570652487433</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1570652487433</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -440,6 +442,7 @@
     <MESSAGE value="model refactoring, renaming" />
     <MESSAGE value="user foreignKey" />
     <MESSAGE value=".gitignore changes" />
-    <option name="LAST_COMMIT_MESSAGE" value=".gitignore changes" />
+    <MESSAGE value="login, cronhome setup" />
+    <option name="LAST_COMMIT_MESSAGE" value="login, cronhome setup" />
   </component>
 </project>
