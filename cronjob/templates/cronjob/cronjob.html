@@ -7,7 +7,7 @@
 </head>
 <body>
 
-    <form  method="post" >
+    <form method="post">
         {% csrf_token %}
 
         <section>
@@ -18,68 +18,70 @@
         <section>
             {# TODO: Make it so that if not set, no input possible #}
             <div><h2>{{ authenticate.box }} Needs HTTP-Authentication</h2></div>
-            <div>{{ authenticate.username }}</div>
+            <div>
+                {{ authenticate.username.label_tag }}
+                {{ authenticate.username }}
+            </div>
             <br>
-            <div>{{ authenticate.password }}</div>
+            <div>
+                {{ authenticate.password.label_tag }}
+                {{ authenticate.password }}
+            </div>
         </section>
 
         <section>
 
             <h2>Time to run</h2>
             <label>
-                <input type="radio" name="times" value="{{ minute }}">Every
-                <select name="minute" id="times">
-                     {% for _ in 60|intRange %}
-                         <option value="{{ forloop.counter }}">{{ forloop.counter }}</option>
-                     {% endfor %}
-                </select> minute(s)
-            </label><br>
-
-            <label>
-                <input type="radio" name="times" value="{{ day }}">Every day at
-                <input type="time" name="times" value="{{ hours }}">
-            </label><br>
-
-            <label>
-                <input type="radio" name="times" value="{{ month }}">Every month
-                <select name="month">
-                    {% for i in 27|intRange %}
-                        <option value="{{ i }}">{{ forloop.counter }}.</option>
-                    {% endfor %}
-                </select> at
-                <input type="time" name="hours" value="{{ hours }}">
-            </label><br>
-
-            <label>
-                <input type="radio" name="times" value="{{ userDefined }}">User defined
+                <input type="radio" name="id_times" value="minutes" required>
+                {{ minutes }} minute(s)
             </label>
-
+            <br>
+            <label>
+                <input type="radio" name="id_times" value="hours" required> Every day at
+                {{ hours.every_hour }} : {{ hours.every_minute }}
+            </label>
+            <br>
+            <label>
+                <input type="radio" name="id_times" value="days" required> Every month
+                {{ days.every_month_day }} at {{ days.every_hours_day }} : {{ days.every_minute_day }}
+            </label>
+            <br>
+            <label>
+                <input type="radio" name="id_times" value="user_defined" required> User defined
+            </label>
         </section>
 
         <section>
+
             <h2>Message</h2>
             <div>
-                <input id="failedJobsLabel" type="checkbox" name="messages" value="0">
-                <label for="failedJobsLabel">Failed Jobs</label>
+                {{ user_message.failed_job }}
+                <label for="{{ user_message.failed_job.id_for_label }}">Failed Job</label>
             </div>
             <div>
-                <input id="successfulJobsLabel" type="checkbox" name="messages" value="1">
-                <label for="successfulJobsLabel">Successful Jobs</label>
+                {{ user_message.successful_job }}
+                <label for="{{ user_message.successful_job.id_for_label }}">Successful Job</label>
             </div>
             <div>
-                <input id="stopJobLabel" type="checkbox" name="messages" value="2">
-                <label for="stopJobLabel">Automatically stop the job if to many failures</label>
+                {{ user_message.stop_job }}
+                <label for="{{ user_message.stop_job.id_for_label }}">Automatically stop the job if to many failures happen</label>
             </div>
+
         </section>
 
         <section>
             <h2>General</h2>
-                <input id="saveMessageLabel" type="checkbox" name="saveMessage" value="{{ saveMessage }}">
-                <label for="saveMessageLabel">Save message</label>
+                <div>
+                    {{ general.will_save_message }}
+                    <label for="{{ general.will_save_message.id_for_label }}">Save message</label>
+                </div>
         </section>
         <br>
         <section>
-                <input name="input" type="submit" value="Make Cron-Job">
+
+            <p></p>
+            <input name="input" type="submit" value="Make Cron-Job">
 
         </section>
     </form>
