@@ -15,17 +15,32 @@ class AuthenticateForm(forms.Form):
 	                           label_suffix=' ')
 
 
-class TimesForm(forms.Form):
-	minutes = forms.IntegerField(min_value=0, max_value=59, initial=0, label_suffix=' ')
-	hours = forms.IntegerField(min_value=0, max_value=23, initial=0, label_suffix=' ')
-	days = forms.IntegerField(min_value=1, max_value=31, initial=1, label_suffix=' ')
+class MinutesForm(forms.Form):
+	each_minute = forms.IntegerField(min_value=0, max_value=59, initial=0, label='Each', label_suffix=' ', required=False)
+
+
+class HoursFrom(forms.Form):
+	every_hour = forms.IntegerField(min_value=0, max_value=23, initial=0, label_suffix=' ', required=False)
+	every_minute = forms.IntegerField(min_value=0, max_value=59, initial=0, label_suffix=' ', required=False)
+
+
+class DaysFrom(forms.Form):
+	every_month_day = forms.IntegerField(min_value=1, max_value=31, initial=1, label_suffix=' ', required=False)
+	every_hours_day = forms.IntegerField(min_value=0, max_value=23, initial=0, label_suffix=' ', required=False)
+	every_minute_day = forms.IntegerField(min_value=0, max_value=59, initial=0, label_suffix=' ', required=False)
+
+
+# class TimesForm(forms.Form):
+# 	minutes = forms.IntegerField(min_value=0, max_value=59, initial=0, label_suffix=' ')
+# 	hours = forms.IntegerField(min_value=0, max_value=23, initial=0, label_suffix=' ')
+# 	days = forms.IntegerField(min_value=1, max_value=31, initial=1, label_suffix=' ')
 
 
 class UserMessageForm(forms.Form):
-	failedJob = forms.BooleanField(required=False, label_suffix=' ')
-	successfulJob = forms.BooleanField(required=False, label_suffix=' ')
-	stopJob = forms.BooleanField(required=False)
+	failed_job = forms.BooleanField(required=False, label_suffix=' ')
+	successful_job = forms.BooleanField(required=False, label_suffix=' ')
+	stop_job = forms.BooleanField(required=False)
 
 
 class GeneralForm(forms.Form):
-	willSaveMessage = forms.BooleanField(required=False, label_suffix=' ')
+	will_save_message = forms.BooleanField(required=False, label_suffix=' ')

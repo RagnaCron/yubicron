@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from cronjob.forms.cronjob.forms import AuthenticateForm, TitleForm, UserMessageForm, GeneralForm, TimesForm
-
+from cronjob.forms.cronjob.forms import AuthenticateForm, TitleForm, UserMessageForm, GeneralForm
+from cronjob.forms.cronjob.forms import MinutesForm, HoursFrom, DaysFrom
 
 # Create your views here.
 
@@ -11,15 +11,17 @@ def createCronJob(request):
 	if request.method == 'POST':
 		title = TitleForm(data=request.POST)
 		authenticate = AuthenticateForm(data=request.POST)
-		userMessage = UserMessageForm(data=request.POST)
-		minutes = request.POST.get('minutes')
-		times = TimesForm(data=request.POST)
+		user_message = UserMessageForm(data=request.POST)
+		minutes = MinutesForm(data=request.POST)
+		hours = HoursFrom(data=request.POST)
+		days = DaysFrom(data=request.POST)
 		general = GeneralForm(data=request.POST)
-		executionTime = calcSchedule(request, times)
-		print(executionTime)
-		return render(request, 'cronjob/cronjob.html', {'title': title, 'authenticate': authenticate, 'times': times,
-		                                                'minutes': minutes, 'userMessage': userMessage,
-		                                                'general': general})
+		execution_time = calcSchedule(request, minutes, hours, days)
+		print(execution_time)
+		context = {'title': title, 'authenticate': authenticate,
+		           'minutes': minutes, 'hours': hours, 'days': days,
+		           'userMessage': user_message, 'general': general}
+		return render(request, 'cronjob/cronjob.html', context)
 
 	return render(request, 'cronjob/cronjob.html', context)
 
@@ -27,23 +29,29 @@ def createCronJob(request):
 def renderCronJob(request):
 	title = TitleForm(data=request)
 	authenticate = AuthenticateForm(data=request)
-	userMessage = UserMessageForm(data=request)
-	times = TimesForm(data=request)
+	user_message = UserMessageForm(data=request)
+	minutes = MinutesForm(data=request)
+	hours = HoursFrom(data=request)
+	days = DaysFrom(data=request)
 	general = GeneralForm(data=request)
 
-	context = {'title': title, 'authenticate': authenticate, 'times': times,
-	           'userMessage': userMessage, 'general': general}
+	context = {'title': title, 'authenticate': authenticate, 'minutes': minutes,
+	           'hours': hours, 'days': days,
+	           'user_essage': user_message, 'general': general}
 	return context
 
 
 # Original Gangster Programmer (OGP) of calcSchedule(request): Vincenz Gregori
 # OGP changer: Manuel Werder
-def calcSchedule(request, times):
+def calcSchedule(request, minutes, hours, days):
 	if request.POST.get('id_times') == 'minutes':
-		return '*/' + str(times['minutes'].value()) + ' * * * *'
+		return '*/' + str(minutes['each_minute'].value()) + ' * * * *'
 	elif request.POST.get('id_times') == 'hours':
-		return str(times['minutes'].value()) + ' ' + str(times['hours'].value()) + ' * * *'
+		return str(hours['every_minute'].value()) + \
+		       ' ' + str(hours['every_hour'].value()) + ' * * *'
 	elif request.POST.get('id_times') == 'days':
-		return str(times['minutes'].value()) + ' ' + str(times['hours'].value()) + ' ' + str(times['days'].value()) + ' * *'
-	elif request.POST.get('id_times') == 'userDefined':
+		return str(days['every_minute_day'].value()) +\
+		       ' ' + str(days['every_hours_day'].value()) + \
+		       ' ' + str(days['every_month_day'].value()) + ' * *'
+	elif request.POST.get('id_times') == 'user_defined':
 		return '* * * * *'

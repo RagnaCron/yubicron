@@ -33,23 +33,22 @@
 
             <h2>Time to run</h2>
             <label>
-                <input type="radio" name="id_times" value="minutes" required>Each
-                <input type="number" name="minutes" min=0 max=59 value="{{ minutes }}">minute(s)
-{#                {{ times.minutes }}#}
+                <input type="radio" name="id_times" value="minutes" required>
+                {{ minutes }} minute(s)
             </label>
             <br>
             <label>
                 <input type="radio" name="id_times" value="hours" required> Every day at
-                {{ times.hours }} : {{ times.minutes }}
+                {{ hours.every_hour }} : {{ hours.every_minute }}
             </label>
             <br>
             <label>
                 <input type="radio" name="id_times" value="days" required> Every month
-                {{ times.days }} at {{ times.hours }} : {{ times.minutes }}
+                {{ days.every_month_day }} at {{ days.every_hours_day }} : {{ days.every_minute_day }}
             </label>
             <br>
             <label>
-                <input type="radio" name="id_times" value="userDefined" required> User defined
+                <input type="radio" name="id_times" value="user_defined" required> User defined
             </label>
         </section>
 
@@ -57,19 +56,16 @@
 
             <h2>Message</h2>
             <div>
-                {{ userMessage.failedJob.error_messages }}
-                {{ userMessage.failedJob }}
-                <label for="{{ userMessage.failedJob.id_for_label }}">Failed Job</label>
+                {{ user_message.failed_job }}
+                <label for="{{ user_message.failed_job.id_for_label }}">Failed Job</label>
             </div>
             <div>
-                {{ userMessage.successfulJob.error_messages }}
-                {{ userMessage.successfulJob }}
-                <label for="{{ userMessage.successfulJob.id_for_label }}">Successful Job</label>
+                {{ user_message.successful_job }}
+                <label for="{{ user_message.successful_job.id_for_label }}">Successful Job</label>
             </div>
             <div>
-                {{ userMessage.stopJob.error_messages }}
-                {{ userMessage.stopJob }}
-                <label for="{{ userMessage.stopJob.id_for_label }}">Automatically stop the job if to many failures happen</label>
+                {{ user_message.stop_job }}
+                <label for="{{ user_message.stop_job.id_for_label }}">Automatically stop the job if to many failures happen</label>
             </div>
 
         </section>
@@ -77,9 +73,8 @@
         <section>
             <h2>General</h2>
                 <div>
-                    {{ general.willSaveMessage.error_messages }}
-                    {{ general.willSaveMessage }}
-                    <label for="{{ general.willSaveMessage.id_for_label }}">Save message</label>
+                    {{ general.will_save_message }}
+                    <label for="{{ general.will_save_message.id_for_label }}">Save message</label>
                 </div>
         </section>
         <br>
