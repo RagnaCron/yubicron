@@ -25,7 +25,7 @@ def createCronJob(request):
 	if request.method == 'POST':
 		execution_time = calcSchedule(request, minutes, hours, days)
 		cron_job = CronJob(
-			user=auth.get_user(request),
+			user=auth.get_user(request).id,
 			title=title.title.clean(),
 			url=title.url.clean(),
 			needs_authentication=authenticate.box.clean(),
