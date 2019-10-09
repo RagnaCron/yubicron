@@ -2,8 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a6c3f724-2e45-49fb-97e0-181b523cd793" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/cronjob/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cronjob/templates/cronjob/cronhome.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cronjob/templates/cronjob/cronuserlogin.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cronjob/views/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cronjob/views/cronhomeview.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cronjob/views/loginview.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cronjob/forms/cronjob/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/cronjob/forms/cronjob/cronjobforms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cronjob/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/cronjob/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cronjob/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/cronjob/views/cronjobview.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -83,11 +90,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/cronjob/views" />
       <recent name="$PROJECT_DIR$/.idea" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/cronjob/templatetags" />
       <recent name="$PROJECT_DIR$/cronjob/statics" />
-      <recent name="$PROJECT_DIR$/cronjob" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -146,7 +153,7 @@
       <workItem from="1570567721427" duration="4468000" />
       <workItem from="1570595531230" duration="2911000" />
       <workItem from="1570601071883" duration="29037000" />
-      <workItem from="1570639967088" duration="6933000" />
+      <workItem from="1570639967088" duration="9708000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1570458743703</created>
@@ -316,7 +323,21 @@
       <option name="project" value="LOCAL" />
       <updated>1570648194895</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary=".gitignore changes">
+      <created>1570649722811</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1570649722811</updated>
+    </task>
+    <task id="LOCAL-00026" summary=".gitignore changes">
+      <created>1570649738400</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1570649738400</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -360,6 +381,31 @@
             </State>
           </value>
         </entry>
+        <entry key="2">
+          <value>
+            <State>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="structure">
+                    <value>
+                      <list>
+                        <option value="dir:/home/master/Documents/school/uk307/webcron/cronjob" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
         <entry key="MAIN">
           <value>
             <State>
@@ -369,13 +415,9 @@
         </entry>
       </map>
     </option>
-    <option name="OPEN_TABS">
-      <set>
-        <option value="1" />
-      </set>
-    </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Initial Commit" />
     <MESSAGE value="Basic Web cron layout" />

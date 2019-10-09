@@ -1,10 +1,12 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
-from cronjob.forms.cronjob.forms import AuthenticateForm, TitleForm, UserMessageForm, GeneralForm
-from cronjob.forms.cronjob.forms import MinutesForm, HoursFrom, DaysFrom
+from cronjob.forms.cronjob.cronjobforms import AuthenticateForm, TitleForm, UserMessageForm, GeneralForm
+from cronjob.forms.cronjob.cronjobforms import MinutesForm, HoursFrom, DaysFrom
+
 
 # Create your views here.
 
-
+# @login_required(redirect_field_name='login', login_url='/login')
 def createCronJob(request):
 	# TODO: - POST evaluation -> create model entry to CronJob
 	context = renderCronJob(None)
@@ -17,7 +19,6 @@ def createCronJob(request):
 		days = DaysFrom(data=request.POST)
 		general = GeneralForm(data=request.POST)
 		execution_time = calcSchedule(request, minutes, hours, days)
-		print(execution_time)
 		context = {'title': title, 'authenticate': authenticate,
 		           'minutes': minutes, 'hours': hours, 'days': days,
 		           'userMessage': user_message, 'general': general}
@@ -50,7 +51,7 @@ def calcSchedule(request, minutes, hours, days):
 		return str(hours['every_minute'].value()) + \
 		       ' ' + str(hours['every_hour'].value()) + ' * * *'
 	elif request.POST.get('id_times') == 'days':
-		return str(days['every_minute_day'].value()) +\
+		return str(days['every_minute_day'].value()) + \
 		       ' ' + str(days['every_hours_day'].value()) + \
 		       ' ' + str(days['every_month_day'].value()) + ' * *'
 	elif request.POST.get('id_times') == 'user_defined':
