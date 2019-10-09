@@ -4,19 +4,19 @@ from django.db import models
 
 
 class CronJob(models.Model):
+	user = models.ForeignKey(on_delete=models.CASCADE)
+
 	title = models.CharField(max_length=50)
 	url = models.URLField
 
-	needsAuthentication = models.BooleanField
-	userName = models.CharField(max_length=20)
+	needs_authentication = models.BooleanField
+	username = models.CharField(max_length=20)
 	password = models.CharField(max_length=30)
 
-	executionTime = models.CharField(max_length=30)
+	execution_time = models.CharField(max_length=30)
 
-	failMessage = models.BooleanField
-	successMessage = models.BooleanField
-	automaticJobStopperWhenToManyFailures = models.BooleanField
+	fail_message = models.BooleanField
+	success_message = models.BooleanField
+	automatic_job_stopper_when_to_many_failures = models.BooleanField
 
-	willSaveMessage = models.BooleanField
-	savedMessage = models.TextField
-
+	will_save_message = models.BooleanField
