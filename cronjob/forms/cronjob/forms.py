@@ -30,12 +30,6 @@ class DaysFrom(forms.Form):
 	every_minute_day = forms.IntegerField(min_value=0, max_value=59, initial=0, label_suffix=' ', required=False)
 
 
-# class TimesForm(forms.Form):
-# 	minutes = forms.IntegerField(min_value=0, max_value=59, initial=0, label_suffix=' ')
-# 	hours = forms.IntegerField(min_value=0, max_value=23, initial=0, label_suffix=' ')
-# 	days = forms.IntegerField(min_value=1, max_value=31, initial=1, label_suffix=' ')
-
-
 class UserMessageForm(forms.Form):
 	failed_job = forms.BooleanField(required=False, label_suffix=' ')
 	successful_job = forms.BooleanField(required=False, label_suffix=' ')
