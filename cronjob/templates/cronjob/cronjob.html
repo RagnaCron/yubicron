@@ -32,33 +32,30 @@
         <section>
 
             <h2>Time to run</h2>
-
-            {{ minutes.non_field_errors }}
-            <input type="radio" name="id_times" value="minutes" required>
-            {{ minutes }} minute(s)
-
+            <label>
+                <input type="radio" name="id_times" value="minutes" required>Each
+                <input type="number" name="minutes" min=0 max=59 value="{{ minutes }}">minute(s)
+{#                {{ times.minutes }}#}
+            </label>
             <br>
-
-            {{ hours.non_field_errors }}
-            <input type="radio" name="id_times" value="hours" required> Every day at
-            {{ hours.hours }} : {{ hours.minutes }}
-
+            <label>
+                <input type="radio" name="id_times" value="hours" required> Every day at
+                {{ times.hours }} : {{ times.minutes }}
+            </label>
             <br>
-
-            {{ days.non_field_errors }}
-            <input type="radio" name="id_times" value="days" required> Every month
-            {{ days.days }} at {{ days.hours }} : {{ days.minutes }}
-
+            <label>
+                <input type="radio" name="id_times" value="days" required> Every month
+                {{ times.days }} at {{ times.hours }} : {{ times.minutes }}
+            </label>
             <br>
-
-            <input type="radio" name="id_times" value="userDefined" required> User defined
-
+            <label>
+                <input type="radio" name="id_times" value="userDefined" required> User defined
+            </label>
         </section>
 
         <section>
 
             <h2>Message</h2>
-            {{ userMessage.non_field_errors }}
             <div>
                 {{ userMessage.failedJob.error_messages }}
                 {{ userMessage.failedJob }}
@@ -79,7 +76,6 @@
 
         <section>
             <h2>General</h2>
-            {{ general.non_field_errors }}
                 <div>
                     {{ general.willSaveMessage.error_messages }}
                     {{ general.willSaveMessage }}

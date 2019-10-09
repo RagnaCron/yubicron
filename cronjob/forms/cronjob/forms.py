@@ -15,19 +15,10 @@ class AuthenticateForm(forms.Form):
 	                           label_suffix=' ')
 
 
-class MinutesForm(forms.Form):
-	minutes = forms.IntegerField(min_value=0, max_value=59, label='Every', label_suffix=' ', required=False)
-
-
-class HoursFrom(forms.Form):
-	hours = forms.IntegerField(min_value=0, max_value=23, label_suffix=' ', required=False)
-	minutes = forms.IntegerField(min_value=0, max_value=59, label_suffix=' ', required=False)
-
-
-class DaysFrom(forms.Form):
-	days = forms.IntegerField(min_value=1, max_value=31, label_suffix=' ', required=False)
-	hours = forms.IntegerField(min_value=0, max_value=23, label_suffix=' ', required=False)
-	minutes = forms.IntegerField(min_value=0, max_value=59, label_suffix=' ', required=False)
+class TimesForm(forms.Form):
+	minutes = forms.IntegerField(min_value=0, max_value=59, initial=0, label_suffix=' ')
+	hours = forms.IntegerField(min_value=0, max_value=23, initial=0, label_suffix=' ')
+	days = forms.IntegerField(min_value=1, max_value=31, initial=1, label_suffix=' ')
 
 
 class UserMessageForm(forms.Form):
