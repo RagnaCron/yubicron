@@ -2,15 +2,13 @@
 
 {% include 'partials/header.html' %}
 
-    <section>
-        <h1>This is the cron job website.</h1>
-        <p>You have to login to register your cron jobs.</p>
-    </section>
+    <section class="basic_layout">
+        <div class="center_layout">
+            <h1>This is the cron job website.</h1>
+            <p>You have to login to register your cron jobs.</p>
 
-
-
-    <section>
-        <a href="{% url 'cronjob:createCronJob' %}">Create new Cron Job</a>
+            <a class="box_link" href="{% url 'cronjob:createCronJob' %}">Create new Cron Job</a>
+        </div>
     </section>
 
 {% include 'partials/lowerbody.html' %}

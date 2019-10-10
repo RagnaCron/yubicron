@@ -2,10 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2287240f-642c-4c30-bf24-329befd1766b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/cronjob/templates/partials/header.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cronjob/static/cronjob/godmode.css" beforeDir="false" afterPath="$PROJECT_DIR$/cronjob/static/cronjob/godmode.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cronjob/templates/cronjob/cronhome.html" beforeDir="false" afterPath="$PROJECT_DIR$/cronjob/templates/cronjob/cronhome.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cronjob/templates/partials/upperbody.html" beforeDir="false" afterPath="$PROJECT_DIR$/cronjob/templates/partials/upperbody.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cronjob/templates/cronjob/cronjob.html" beforeDir="false" afterPath="$PROJECT_DIR$/cronjob/templates/cronjob/cronjob.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cronjob/templates/cronjob/cronregisteruser.html" beforeDir="false" afterPath="$PROJECT_DIR$/cronjob/templates/cronjob/cronregisteruser.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cronjob/templates/cronjob/cronuserlogin.html" beforeDir="false" afterPath="$PROJECT_DIR$/cronjob/templates/cronjob/cronuserlogin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cronjob/templates/partials/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/cronjob/templates/partials/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -87,15 +91,15 @@
     <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/cronjob/static/cronjob" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/cronjob/templates" />
       <recent name="$PROJECT_DIR$/cronjob/views" />
       <recent name="$PROJECT_DIR$/.idea" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/cronjob/templatetags" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/cronjob/static/cronjob" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -382,7 +386,14 @@
       <option name="project" value="LOCAL" />
       <updated>1570706858393</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Created Header Partial">
+      <created>1570707537132</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1570707537132</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -464,7 +475,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Added template filters" />
     <MESSAGE value="gitignore more changes" />
     <MESSAGE value="Added Model CronJob" />
     <MESSAGE value="layout done" />
@@ -489,6 +499,7 @@
     <MESSAGE value="styling start (CSS), broke up html body in two files" />
     <MESSAGE value="user registration, login, logout and forms" />
     <MESSAGE value="UserDefinedForm created" />
-    <option name="LAST_COMMIT_MESSAGE" value="UserDefinedForm created" />
+    <MESSAGE value="Created Header Partial" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created Header Partial" />
   </component>
 </project>

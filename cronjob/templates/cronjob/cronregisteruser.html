@@ -1,17 +1,23 @@
 {% include 'partials/upperbody.html' %}
 
-<h1>Register new User</h1>
+<a class="exit" href="{% url 'cronjob:home' %}"><strong>Quit</strong></a>
 
-<form method="post" action="{% url 'cronjob:register' %}">
-    {% csrf_token %}
-    {% for form in user_creation_form %}
-        {{ form.label }}<br>
-        {{ form }}<br>
-    {% endfor %}
-    <br>
-    <input type="submit" value="Register">
-</form>
+<section class="basic_layout">
+    <div class="inner_layout">
 
-<br><a href="{% url 'cronjob:home' %}">Quit Registration</a>
+        <h1>Register new User</h1>
+
+        <form method="post" action="{% url 'cronjob:register' %}">
+            {% csrf_token %}
+            {% for form in user_creation_form %}
+                {{ form.label }}<br>
+                {{ form }}<br>
+            {% endfor %}
+            <br>
+            <input class="button" type="submit" value="Register">
+        </form>
+
+    </div>
+</section>
 
 {% include 'partials/lowerbody.html' %}

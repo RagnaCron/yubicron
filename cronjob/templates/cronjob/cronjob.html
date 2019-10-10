@@ -1,98 +1,107 @@
 {% include 'partials/upperbody.html' %}
 
-    <form method="post">
-        {% csrf_token %}
+<a class="exit" href="{% url 'cronjob:home' %}"><strong>Quit</strong></a>
 
-        <section>
-            <h2>Title, Address</h2>
-            {% for tag in title %}
-                {{ tag.label_tag }}
-                {{ tag }}
+<section class="basic_layout">
+    <div class="inner_layout">
+
+    <h2>Create Cron Job</h2>
+
+        <form method="post">
+            {% csrf_token %}
+
+            <section>
+                <h3>Title, Address</h3>
+                {% for tag in title %}
+                    {{ tag.label_tag }}
+                    {{ tag }}
+                    <br>
+                {% endfor %}
+            </section>
+
+            <section>
+                {# TODO: Make it so that if not set, no input possible #}
+
+    {#            <label>Authentication needed?#}
+    {#                <input name="Auth" type="checkbox" value="True" onclick="displayHidden()"/>#}
+    {#                <span class="checkmark"></span>#}
+    {#            </label>#}
+    {#$(document).ready(function() {#}
+    {#    $(".my_form input[type=checkbox]").change(function() {#}
+    {#          //Some code here#}
+    {#    });#}
+    {# });        #}
+
+                {% for form in authenticate %}
+                    {% ifequal form.id_for_label 'id_box' %}
+                        <h3>{{ form }} {{ form.label_tag }}</h3>
+                    {% else %}
+                        {{ form.label_tag }}
+                        {{ form }}<br>
+                    {% endifequal %}
+                {% endfor %}
+
+            </section>
+
+            <section>
+
+                <h3>Time to run</h3>
+                <label>
+                    <input type="radio" name="id_times" value="minutes" required>
+                    {{ minutes }} minute(s)
+                </label>
                 <br>
-            {% endfor %}
-        </section>
+                <label>
+                    <input type="radio" name="id_times" value="hours" required> Every day at
+                    {{ hours.every_hour }} : {{ hours.every_minute }}
+                </label>
+                <br>
+                <label>
+                    <input type="radio" name="id_times" value="days" required> Every month
+                    {{ days.every_month_day }} at {{ days.every_hours_day }} : {{ days.every_minute_day }}
+                </label>
+                <br>
+                <label>
+                    <input type="radio" name="id_times" value="user_defined" required>
+                    {{ user_defined }}
+                </label>
+            </section>
 
-        <section>
-            {# TODO: Make it so that if not set, no input possible #}
+            <section>
 
-{#            <label>Authentication needed?#}
-{#                <input name="Auth" type="checkbox" value="True" onclick="displayHidden()"/>#}
-{#                <span class="checkmark"></span>#}
-{#            </label>#}
-{#$(document).ready(function() {#}
-{#    $(".my_form input[type=checkbox]").change(function() {#}
-{#          //Some code here#}
-{#    });#}
-{# });        #}
-
-            {% for form in authenticate %}
-                {% ifequal form.id_for_label 'id_box' %}
-                    <h2>{{ form }} {{ form.label_tag }}</h2>
-                {% else %}
-                    {{ form.label_tag }}
-                    {{ form }}<br>
-                {% endifequal %}
-            {% endfor %}
-
-        </section>
-
-        <section>
-
-            <h2>Time to run</h2>
-            <label>
-                <input type="radio" name="id_times" value="minutes" required>
-                {{ minutes }} minute(s)
-            </label>
-            <br>
-            <label>
-                <input type="radio" name="id_times" value="hours" required> Every day at
-                {{ hours.every_hour }} : {{ hours.every_minute }}
-            </label>
-            <br>
-            <label>
-                <input type="radio" name="id_times" value="days" required> Every month
-                {{ days.every_month_day }} at {{ days.every_hours_day }} : {{ days.every_minute_day }}
-            </label>
-            <br>
-            <label>
-                <input type="radio" name="id_times" value="user_defined" required>
-                {{ user_defined }}
-            </label>
-        </section>
-
-        <section>
-
-            <h2>Message</h2>
-            <div>
-                {{ user_message.failed_job }}
-                <label for="{{ user_message.failed_job.id_for_label }}">Failed Job</label>
-            </div>
-            <div>
-                {{ user_message.successful_job }}
-                <label for="{{ user_message.successful_job.id_for_label }}">Successful Job</label>
-            </div>
-            <div>
-                {{ user_message.stop_job }}
-                <label for="{{ user_message.stop_job.id_for_label }}">Automatically stop the job if to many failures happen</label>
-            </div>
-
-        </section>
-
-        <section>
-            <h2>General</h2>
+                <h3>Message</h3>
                 <div>
-                    {{ general.will_save_message }}
-                    <label for="{{ general.will_save_message.id_for_label }}">Save message</label>
+                    {{ user_message.failed_job }}
+                    <label for="{{ user_message.failed_job.id_for_label }}">Failed Job</label>
                 </div>
-        </section>
-        <br>
-        <section>
+                <div>
+                    {{ user_message.successful_job }}
+                    <label for="{{ user_message.successful_job.id_for_label }}">Successful Job</label>
+                </div>
+                <div>
+                    {{ user_message.stop_job }}
+                    <label for="{{ user_message.stop_job.id_for_label }}">Automatically stop the job if to many failures happen</label>
+                </div>
 
-            <p></p>
-            <input name="input" type="submit" value="Make Cron-Job">
+            </section>
 
-        </section>
-        <br><a href="{% url 'cronjob:home' %}">Quit create Job</a>
-    </form>
+            <section>
+                <h3>General</h3>
+                    <div>
+                        {{ general.will_save_message }}
+                        <label for="{{ general.will_save_message.id_for_label }}">Save message</label>
+                    </div>
+            </section>
+            <br>
+            <section>
 
+                <p></p>
+                <input class="button" name="input" type="submit" value="Make Cron-Job">
+
+            </section>
+{#            <br><a class="box_link" href="{% url 'cronjob:home' %}">Quit create Job</a>#}
+        </form>
+
+    </div>
+</section>
 {% include 'partials/lowerbody.html' %}
