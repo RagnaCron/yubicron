@@ -4,10 +4,16 @@
 
     <section class="basic_layout">
         <div class="center_layout">
-            <h1>This is the cron job website.</h1>
-            <p>You have to login to register your cron jobs.</p>
+            {% if user.is_authenticated %}
+                {% ifnotequal message '' %}
+                    <p>{{ message }}</p>
+                {% endifnotequal %}<br><br>
+                <a class="box_link" href="{% url 'cronjob:createCronJob' %}">Create new Cron Job</a>
+            {% else %}
+                <h1>This is the cron job website.</h1>
+                <p>You have to login to register your cron jobs.</p>
+            {% endif %}
 
-            <a class="box_link" href="{% url 'cronjob:createCronJob' %}">Create new Cron Job</a>
         </div>
     </section>
 

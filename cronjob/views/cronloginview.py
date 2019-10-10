@@ -1,5 +1,5 @@
 from django.contrib.auth import login, authenticate
-from django.shortcuts import redirect, render
+from django.shortcuts import render
 from cronjob.forms.cronjob.cronloginform import CronLoginForm
 
 
@@ -14,8 +14,12 @@ def userLogin(request):
 			user = authenticate(username=username, password=password)
 			if user is not None:
 				login(request, user)
-				return redirect('cronjob:home')
+				return render(request, 'cronjob/cronhome.html', {'message': 'Your login was successful.'})
+			error = 'Username or Password wrong.'
+		else:
+			error = user_login.errors
 	else:
 		user_login = CronLoginForm()
-	context = {'website_title': website_title, 'user_login': user_login, }
+		error = user_login.errors
+	context = {'website_title': website_title, 'user_login': user_login, 'error': error, }
 	return render(request, 'cronjob/cronuserlogin.html', context=context)
