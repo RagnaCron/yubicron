@@ -2,16 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2287240f-642c-4c30-bf24-329befd1766b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/cronjob/static/scripts/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cronjob/static/scripts/hide.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cronjob/templates/partials/header.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cronjob/forms/cronjob/cronjobforms.py" beforeDir="false" afterPath="$PROJECT_DIR$/cronjob/forms/cronjob/cronjobforms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cronjob/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/cronjob/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cronjob/templates/cronjob/cronjob.html" beforeDir="false" afterPath="$PROJECT_DIR$/cronjob/templates/cronjob/cronjob.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cronjob/templates/cronjob/cronhome.html" beforeDir="false" afterPath="$PROJECT_DIR$/cronjob/templates/cronjob/cronhome.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cronjob/templates/partials/upperbody.html" beforeDir="false" afterPath="$PROJECT_DIR$/cronjob/templates/partials/upperbody.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cronjob/views/cronjobview.py" beforeDir="false" afterPath="$PROJECT_DIR$/cronjob/views/cronjobview.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,10 +19,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
         <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -381,7 +375,14 @@
       <option name="project" value="LOCAL" />
       <updated>1570696752622</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="UserDefinedForm created">
+      <created>1570706858393</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1570706858393</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -463,7 +464,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Basic Web cron layout" />
     <MESSAGE value="Added template filters" />
     <MESSAGE value="gitignore more changes" />
     <MESSAGE value="Added Model CronJob" />
@@ -488,6 +488,7 @@
     <MESSAGE value="simple change" />
     <MESSAGE value="styling start (CSS), broke up html body in two files" />
     <MESSAGE value="user registration, login, logout and forms" />
-    <option name="LAST_COMMIT_MESSAGE" value="user registration, login, logout and forms" />
+    <MESSAGE value="UserDefinedForm created" />
+    <option name="LAST_COMMIT_MESSAGE" value="UserDefinedForm created" />
   </component>
 </project>
