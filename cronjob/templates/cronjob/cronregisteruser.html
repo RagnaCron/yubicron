@@ -7,7 +7,7 @@
 
         <h1>Register new User</h1>
 
-        <form method="post" action="{% url 'cronjob:register' %}">
+        <form class="inner_input" method="post" action="{% url 'cronjob:register' %}">
             {% csrf_token %}
             {% for form in user_creation_form %}
                 {{ form.label }}<br>

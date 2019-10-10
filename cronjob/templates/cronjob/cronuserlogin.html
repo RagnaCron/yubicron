@@ -6,12 +6,13 @@
     <div class="inner_layout">
 
         <h1>Cron Login</h1>
-        <form method="post" action="{% url 'cronjob:userLogin' %}">
+        <form class="inner_input" method="post" action="{% url 'cronjob:userLogin' %}">
             {% csrf_token %}
-            {% for login in user_login %}
-                {{ login.label }}<br>
-                {{ login }}<br>
-            {% endfor %}
+                {% for login in user_login %}
+                    {{ login.label }}<br>
+                    {{ login }}<br>
+                {% endfor %}
+            <br>
             <input class="button" type="submit" value="Login">
         </form>
 

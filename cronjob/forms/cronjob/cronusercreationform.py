@@ -31,7 +31,6 @@ class MyUserCreationForm(forms.Form):
 
         if password1 and password2 and password1 != password2:
             raise ValidationError("Password don't match")
-
         return password2
 
     def save(self, commit=True):

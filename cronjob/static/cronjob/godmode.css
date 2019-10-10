@@ -64,15 +64,23 @@ nav {
     display: table-row;
     align-items: center;
     color: #233446;
+    /*margin-top: 5px;*/
+    /*margin-bottom: 5px;*/
 }
 
 .button {
     border-radius: 15px;
-    border: 1px;
     font-family: 'Roboto Mono', monospace; /* Is needed for Submit button...*/
-    font-size: 15px;
     resize: none;
     color: #233446;
+}
+
+.inner_input input{
+    color: #233446;
+    border: 8px;
+    font-family: 'Roboto Mono', monospace; /* Is needed for Submit button...*/
+    font-size: 13px;
+    background-color: #B8C0CF;
 }
 
 .exit {
