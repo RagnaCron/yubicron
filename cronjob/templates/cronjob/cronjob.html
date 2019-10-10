@@ -7,7 +7,7 @@
 
     <h2>Create Cron Job</h2>
 
-        <form method="post">
+        <form class="inner_input" method="post" action="{% url 'cronjob:createCronJob' %}">
             {% csrf_token %}
 
             <section>
@@ -15,7 +15,6 @@
                 {% for tag in title %}
                     {{ tag.label_tag }}
                     {{ tag }}
-                    <br>
                 {% endfor %}
             </section>
 
@@ -36,8 +35,9 @@
                     {% ifequal form.id_for_label 'id_box' %}
                         <h3>{{ form }} {{ form.label_tag }}</h3>
                     {% else %}
-                        {{ form.label_tag }}
-                        {{ form }}<br>
+                        {{ form.label_tag }}<br>
+                        {{ form }}
+                        <br><br>
                     {% endifequal %}
                 {% endfor %}
 

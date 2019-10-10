@@ -3,7 +3,7 @@ from django import forms
 
 class TitleForm(forms.Form):
 	title = forms.CharField(max_length=30, label_suffix=' ', initial='Title...')
-	url = forms.URLField(label_suffix=' ', initial='http://')
+	url = forms.URLField(label='Url  ', label_suffix=' ', initial='http://')
 
 
 class AuthenticateForm(forms.Form):
