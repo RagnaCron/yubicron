@@ -2,7 +2,7 @@ from django.contrib import auth
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from cronjob.forms.cronjob.cronjobforms import AuthenticateForm, TitleForm, UserMessageForm, GeneralForm
-from cronjob.forms.cronjob.cronjobforms import MinutesForm, HoursFrom, DaysFrom
+from cronjob.forms.cronjob.cronjobforms import MinutesForm, HoursFrom, DaysFrom, UserDefinedTimeForm
 from cronjob.models import CronJob
 
 
@@ -18,13 +18,14 @@ def createCronJob(request):
 	minutes = MinutesForm(data=request.POST or None)
 	hours = HoursFrom(data=request.POST or None)
 	days = DaysFrom(data=request.POST or None)
+	user_defined = UserDefinedTimeForm(data=request.POST or None)
 	user_message = UserMessageForm(data=request.POST or None)
 	general = GeneralForm(data=request.POST or None)
 	context = {'website_title': website_title, 'title': title, 'authenticate': authenticate,
-	           'minutes': minutes, 'hours': hours, 'days': days,
+	           'minutes': minutes, 'hours': hours, 'days': days, 'user_defined': user_defined,
 	           'user_message': user_message, 'general': general}
 	if request.method == 'POST':
-		execution_time = calcSchedule(request, minutes, hours, days)
+		execution_time = calcSchedule(request, minutes, hours, days, user_defined)
 		cron_job = CronJob(
 			user=auth.get_user(request),
 			title=title['title'].value(),
@@ -46,7 +47,7 @@ def createCronJob(request):
 
 # Original Gangster Programmer (OGP) of calcSchedule(request): Vincenz Gregori
 # OGP changer: Manuel Werder
-def calcSchedule(request, minutes, hours, days):
+def calcSchedule(request, minutes, hours, days, user_defined):
 	if request.POST.get('id_times') == 'minutes':
 		return '*/' + str(minutes['each_minute'].value()) + ' * * * *'
 	elif request.POST.get('id_times') == 'hours':
@@ -57,4 +58,4 @@ def calcSchedule(request, minutes, hours, days):
 		       ' ' + str(days['every_hours_day'].value()) + \
 		       ' ' + str(days['every_month_day'].value()) + ' * *'
 	elif request.POST.get('id_times') == 'user_defined':
-		return '* * * * *'
+		return str(user_defined['user_defined'].value())

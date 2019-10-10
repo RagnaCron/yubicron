@@ -5,21 +5,35 @@
 
         <section>
             <h2>Title, Address</h2>
-            {{ title }}
+            {% for tag in title %}
+                {{ tag.label_tag }}
+                {{ tag }}
+                <br>
+            {% endfor %}
         </section>
 
         <section>
             {# TODO: Make it so that if not set, no input possible #}
-            <div><h2>{{ authenticate.box }} Needs HTTP-Authentication</h2></div>
-            <div>
-                {{ authenticate.username.label_tag }}
-                {{ authenticate.username }}
-            </div>
-            <br>
-            <div>
-                {{ authenticate.password.label_tag }}
-                {{ authenticate.password }}
-            </div>
+
+{#            <label>Authentication needed?#}
+{#                <input name="Auth" type="checkbox" value="True" onclick="displayHidden()"/>#}
+{#                <span class="checkmark"></span>#}
+{#            </label>#}
+{#$(document).ready(function() {#}
+{#    $(".my_form input[type=checkbox]").change(function() {#}
+{#          //Some code here#}
+{#    });#}
+{# });        #}
+
+            {% for form in authenticate %}
+                {% ifequal form.id_for_label 'id_box' %}
+                    <h2>{{ form }} {{ form.label_tag }}</h2>
+                {% else %}
+                    {{ form.label_tag }}
+                    {{ form }}<br>
+                {% endifequal %}
+            {% endfor %}
+
         </section>
 
         <section>
@@ -41,7 +55,8 @@
             </label>
             <br>
             <label>
-                <input type="radio" name="id_times" value="user_defined" required> User defined
+                <input type="radio" name="id_times" value="user_defined" required>
+                {{ user_defined }}
             </label>
         </section>
 
@@ -77,6 +92,7 @@
             <input name="input" type="submit" value="Make Cron-Job">
 
         </section>
+        <br><a href="{% url 'cronjob:home' %}">Quit create Job</a>
     </form>
 
 {% include 'partials/lowerbody.html' %}

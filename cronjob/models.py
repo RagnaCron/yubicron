@@ -21,3 +21,6 @@ class CronJob(models.Model):
 	automatic_job_stopper_when_to_many_failures = models.BooleanField()
 
 	will_save_message = models.BooleanField()
+
+	def __str__(self):
+		return 'Cron Job - Username: {0}, Cron job title: {1}'.format(self.user.username, self.title)
