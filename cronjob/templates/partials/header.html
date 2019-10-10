@@ -1,0 +1,13 @@
+<nav>
+    <section class="basic_layout">
+        <div class="box">
+            {% if user.is_authenticated %}
+                <div class="box_link">{{ user.username }}</div>
+                <a class="box_link" href="{% url 'cronjob:userLogout' %}">Logout</a>
+            {% else %}
+                <a class="box_link" href="{% url 'cronjob:userLogin' %}">Login</a>
+                <a class="box_link" href="{% url 'cronjob:register' %}">Register</a>
+            {% endif %}
+        </div>
+    </section>
+</nav>

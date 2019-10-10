@@ -1,33 +1,88 @@
 html, body {
     height: 100%;
     margin: 0;
-    /*background-color: #2E516B;*/
     font-family: 'Roboto Mono', monospace;
-    /*color: #B8C0CF;*/
-    /*color: #B8C0CF;
-    #2E516B
-    #233446
-    background-color: #2B415A;
-*/
+    color: #233446;
 }
 
 body, form {
     display: flex;
     flex-direction: column;
+    color: #233446;
+
+}
+
+a {
+    display: flex;
+    text-decoration: none;
+    color: #233446;
+    text-align: center;
+    align: center;
 }
 
 nav {
     font-size: 32px;
-}
-
-footer {
-    font-size: 20px;
-}
-
-nav,
-footer {
     line-height: 2.5;
-    /*background-color: #2B415A;*/
-    display: flex;
+    /*display: flex;*/
     flex-direction: row;
+    color: #233446;
 }
+
+.round_corner_box {
+    align-content: center;
+    display: flex;
+    max-width: 100pt;
+    border-radius: 12px;
+    background-color: #B8C0CF;
+    color: #233446;
+}
+
+.basic_layout {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #233446;
+}
+
+.box {
+    margin: 0;
+    padding-right: 30pt;
+    padding-left: 30pt;
+    display: inherit;
+    width: 100%;
+    justify-content: space-between;
+    color: #233446;
+}
+
+.box_link {
+    text-decoration: none;
+    color: #B8C0CF;
+}
+
+.inner_layout {
+    display: table-row;
+    align-items: center;
+    color: #233446;
+}
+
+.button {
+    border-radius: 15px;
+    border: 1px;
+    font-family: 'Roboto Mono', monospace; /* Is needed for Submit button...*/
+    font-size: 15px;
+    resize: none;
+    color: #233446;
+}
+
+.exit {
+    color: #B8C0CF;
+    font-size: 20px;
+    text-decoration: none;
+    margin-top: 10pt;
+    margin-right: 20pt;
+    align-self: flex-end;
+}
+
+
+

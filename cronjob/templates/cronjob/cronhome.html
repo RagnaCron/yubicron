@@ -1,23 +1,14 @@
 {% include 'partials/upperbody.html' %}
 
-    <header>
-        <section>
+{% include 'partials/header.html' %}
+
+    <section class="basic_layout">
+        <div class="center_layout">
             <h1>This is the cron job website.</h1>
             <p>You have to login to register your cron jobs.</p>
-        </section>
-    </header>
 
-    <section>
-        {% if user.is_authenticated %}
-            <a href="{% url 'cronjob:userLogout' %}">Logout</a>
-        {% else %}
-            <a href="{% url 'cronjob:userLogin' %}">Login</a>
-        {% endif %}
-        <a href="{% url 'cronjob:register' %}">Register</a>
-    </section>
-
-    <section>
-        <a href="{% url 'cronjob:createCronJob' %}">Create new Cron Job</a>
+            <a class="box_link" href="{% url 'cronjob:createCronJob' %}">Create new Cron Job</a>
+        </div>
     </section>
 
 {% include 'partials/lowerbody.html' %}
