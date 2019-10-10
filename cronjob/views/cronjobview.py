@@ -9,7 +9,7 @@ from cronjob.models import CronJob
 # Create your views here.
 
 
-@login_required(redirect_field_name='login', login_url='/login')
+@login_required(redirect_field_name='userLogin', login_url='/login')
 def createCronJob(request):
 	website_title = 'Create Cron Job'
 	# TODO: - POST evaluation -> create model entry to CronJob

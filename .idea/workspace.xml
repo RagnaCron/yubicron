@@ -2,20 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a6c3f724-2e45-49fb-97e0-181b523cd793" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/cronjob/static/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cronjob/static/cronjob/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cronjob/static/cronjob/godmode.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cronjob/templates/partials/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cronjob/templates/partials/lowerbody.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cronjob/templates/partials/upperbody.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cronjob/forms/cronjob/cronloginform.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cronjob/forms/cronjob/cronusercreationform.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cronjob/templates/cronjob/cronregisteruser.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cronjob/views/cronlogoutview.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cronjob/views/cronregisterview.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cronjob/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/cronjob/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cronjob/static/cronjob/godmode.css" beforeDir="false" afterPath="$PROJECT_DIR$/cronjob/static/cronjob/godmode.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cronjob/templates/cronjob/cronhome.html" beforeDir="false" afterPath="$PROJECT_DIR$/cronjob/templates/cronjob/cronhome.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cronjob/templates/cronjob/cronjob.html" beforeDir="false" afterPath="$PROJECT_DIR$/cronjob/templates/cronjob/cronjob.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cronjob/templates/cronjob/cronuserlogin.html" beforeDir="false" afterPath="$PROJECT_DIR$/cronjob/templates/cronjob/cronuserlogin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cronjob/views/cronhomeview.py" beforeDir="false" afterPath="$PROJECT_DIR$/cronjob/views/cronhomeview.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cronjob/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/cronjob/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cronjob/views/cronjobview.py" beforeDir="false" afterPath="$PROJECT_DIR$/cronjob/views/cronjobview.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cronjob/views/loginview.py" beforeDir="false" afterPath="$PROJECT_DIR$/cronjob/views/loginview.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cronjob/views/loginview.py" beforeDir="false" afterPath="$PROJECT_DIR$/cronjob/views/cronloginview.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,9 +28,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
-        <option value="HTML File" />
         <option value="CSS File" />
+        <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -91,12 +89,15 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../m133/dungeon" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/cronjob/static/cronjob" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/cronjob/static/cronjob" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/cronjob/templates" />
       <recent name="$PROJECT_DIR$/cronjob/views" />
@@ -162,7 +163,8 @@
       <workItem from="1570595531230" duration="2911000" />
       <workItem from="1570601071883" duration="29037000" />
       <workItem from="1570639967088" duration="11829000" />
-      <workItem from="1570681438663" duration="2841000" />
+      <workItem from="1570681438663" duration="3447000" />
+      <workItem from="1570687002139" duration="8814000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1570458743703</created>
@@ -367,7 +369,14 @@
       <option name="project" value="LOCAL" />
       <updated>1570654273260</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="styling start (CSS), broke up html body in two files">
+      <created>1570684374108</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1570684374109</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -399,10 +408,10 @@
                       </list>
                     </value>
                   </entry>
-                  <entry key="roots">
+                  <entry key="structure">
                     <value>
                       <list>
-                        <option value="$PROJECT_DIR$" />
+                        <option value="dir:/home/master/Documents/school/uk307/webcron/cronjob" />
                       </list>
                     </value>
                   </entry>
@@ -473,6 +482,7 @@
     <MESSAGE value="login, cronhome setup" />
     <MESSAGE value="bound model to controller" />
     <MESSAGE value="simple change" />
-    <option name="LAST_COMMIT_MESSAGE" value="simple change" />
+    <MESSAGE value="styling start (CSS), broke up html body in two files" />
+    <option name="LAST_COMMIT_MESSAGE" value="styling start (CSS), broke up html body in two files" />
   </component>
 </project>

@@ -1,9 +1,9 @@
 html, body {
     height: 100%;
     margin: 0;
-    background-color: #2E516B;
+    /*background-color: #2E516B;*/
     font-family: 'Roboto Mono', monospace;
-    color: #B8C0CF;
+    /*color: #B8C0CF;*/
     /*color: #B8C0CF;
     #2E516B
     #233446
@@ -11,7 +11,23 @@ html, body {
 */
 }
 
-body {
+body, form {
     display: flex;
     flex-direction: column;
+}
+
+nav {
+    font-size: 32px;
+}
+
+footer {
+    font-size: 20px;
+}
+
+nav,
+footer {
+    line-height: 2.5;
+    /*background-color: #2B415A;*/
+    display: flex;
+    flex-direction: row;
 }
