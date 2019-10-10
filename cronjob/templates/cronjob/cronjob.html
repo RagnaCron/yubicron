@@ -19,17 +19,6 @@
             </section>
 
             <section>
-                {# TODO: Make it so that if not set, no input possible #}
-
-    {#            <label>Authentication needed?#}
-    {#                <input name="Auth" type="checkbox" value="True" onclick="displayHidden()"/>#}
-    {#                <span class="checkmark"></span>#}
-    {#            </label>#}
-    {#$(document).ready(function() {#}
-    {#    $(".my_form input[type=checkbox]").change(function() {#}
-    {#          //Some code here#}
-    {#    });#}
-    {# });        #}
 
                 {% for form in authenticate %}
                     {% ifequal form.id_for_label 'id_box' %}
@@ -85,21 +74,18 @@
 
             </section>
 
-            <section>
+{#            <section>#}
                 <h3>General</h3>
-                    <div>
-                        {{ general.will_save_message }}
-                        <label for="{{ general.will_save_message.id_for_label }}">Save message</label>
-                    </div>
-            </section>
+                <div>
+                    {{ general.will_save_message }}
+                    <label for="{{ general.will_save_message.id_for_label }}">Save message</label>
+                </div>
+{#            </section>#}
             <br>
-            <section>
 
-                <p></p>
-                <input class="button" name="input" type="submit" value="Make Cron-Job">
+            <strong><p>By submitting you submit to the cron police.</p></strong>
+            <input class="button" name="input" type="submit" value="Make Cron-Job">
 
-            </section>
-{#            <br><a class="box_link" href="{% url 'cronjob:home' %}">Quit create Job</a>#}
         </form>
 
     </div>
