@@ -1,5 +1,5 @@
 from django.contrib.auth import login, authenticate
-from django.shortcuts import render
+from django.shortcuts import render, render_to_response
 from cronjob.forms.cronjob.cronloginform import CronLoginForm
 
 

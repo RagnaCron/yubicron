@@ -2,15 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2287240f-642c-4c30-bf24-329befd1766b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/cronjob/forms/cronjob/cronresetpasswordform.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cronjob/templates/cronjob/cronresetpassword.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cronjob/views/cronresetpassword.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cronjob/forms/cronjob/cronloginform.py" beforeDir="false" afterPath="$PROJECT_DIR$/cronjob/forms/cronjob/cronloginform.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cronjob/forms/cronjob/cronusercreationform.py" beforeDir="false" afterPath="$PROJECT_DIR$/cronjob/forms/cronjob/cronusercreationform.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cronjob/templates/cronjob/cronhome.html" beforeDir="false" afterPath="$PROJECT_DIR$/cronjob/templates/cronjob/cronhome.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cronjob/templates/cronjob/cronjob.html" beforeDir="false" afterPath="$PROJECT_DIR$/cronjob/templates/cronjob/cronjob.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cronjob/templates/cronjob/cronuserlogin.html" beforeDir="false" afterPath="$PROJECT_DIR$/cronjob/templates/cronjob/cronuserlogin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cronjob/templates/cronjob/cronregisteruser.html" beforeDir="false" afterPath="$PROJECT_DIR$/cronjob/templates/cronjob/cronregisteruser.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cronjob/templates/partials/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/cronjob/templates/partials/header.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cronjob/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/cronjob/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cronjob/views/cronhomeview.py" beforeDir="false" afterPath="$PROJECT_DIR$/cronjob/views/cronhomeview.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cronjob/views/cronjobview.py" beforeDir="false" afterPath="$PROJECT_DIR$/cronjob/views/cronjobview.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cronjob/views/cronloginview.py" beforeDir="false" afterPath="$PROJECT_DIR$/cronjob/views/cronloginview.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cronjob/views/cronregisterview.py" beforeDir="false" afterPath="$PROJECT_DIR$/cronjob/views/cronregisterview.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webcron/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/webcron/settings.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,10 +30,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
-        <option value="Python Script" />
         <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -162,7 +168,7 @@
       <workItem from="1570639967088" duration="11829000" />
       <workItem from="1570681438663" duration="3447000" />
       <workItem from="1570687002139" duration="10035000" />
-      <workItem from="1570732455862" duration="3675000" />
+      <workItem from="1570732455862" duration="12290000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1570458743703</created>
@@ -402,7 +408,14 @@
       <option name="project" value="LOCAL" />
       <updated>1570719178802</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="Messages">
+      <created>1570736188839</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1570736188839</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -484,7 +497,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Added Model CronJob" />
     <MESSAGE value="layout done" />
     <MESSAGE value="some stuff" />
     <MESSAGE value="Forms and interface to Model" />
@@ -509,6 +521,7 @@
     <MESSAGE value="More Styling" />
     <MESSAGE value="Minor Styling" />
     <MESSAGE value="More minor Styling" />
-    <option name="LAST_COMMIT_MESSAGE" value="More minor Styling" />
+    <MESSAGE value="Messages" />
+    <option name="LAST_COMMIT_MESSAGE" value="Messages" />
   </component>
 </project>

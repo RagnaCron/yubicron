@@ -6,10 +6,10 @@ from django import forms
 # https://overiq.com/django-1-10/django-creating-users-using-usercreationform/
 # Some reuse of code
 class MyUserCreationForm(forms.Form):
-    username = forms.CharField(label='Enter Username', min_length=4, max_length=150)
-    email = forms.EmailField(label='Enter email')
-    password1 = forms.CharField(label='Enter password', widget=forms.PasswordInput)
-    password2 = forms.CharField(label='Confirm password', widget=forms.PasswordInput)
+    username = forms.CharField(label='Enter Username', min_length=4, max_length=150, label_suffix='')
+    email = forms.EmailField(label='Enter email', label_suffix='')
+    password1 = forms.CharField(label='Enter password', widget=forms.PasswordInput, label_suffix='')
+    password2 = forms.CharField(label='Confirm password', widget=forms.PasswordInput, label_suffix='')
 
     def clean_username(self):
         username = self.cleaned_data['username'].lower()

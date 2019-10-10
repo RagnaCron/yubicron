@@ -4,12 +4,12 @@
 
 <section class="basic_layout">
     <div class="inner_layout">
-
         <h1>Register new User</h1>
 
         <form class="inner_input" method="post" action="{% url 'cronjob:register' %}">
             {% csrf_token %}
             {% for form in user_creation_form %}
+                {{ form.errors }}
                 {{ form.label }}<br>
                 {{ form }}<br>
             {% endfor %}

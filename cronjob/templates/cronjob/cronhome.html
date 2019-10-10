@@ -10,8 +10,12 @@
                 {% endifnotequal %}<br><br>
                 <a class="box_link" href="{% url 'cronjob:createCronJob' %}">Create new Cron Job</a>
             {% else %}
-                <h1>This is the cron job website.</h1>
-                <p>You have to login to register your cron jobs.</p>
+                {% ifequal message '' %}
+                   <h1>This is the cron job website.</h1>
+                    <p>You have to login to register your cron jobs.</p>
+                {% else %}
+                    {{ message }}
+                {% endifequal %}
             {% endif %}
 
         </div>
