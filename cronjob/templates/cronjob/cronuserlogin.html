@@ -1,0 +1,14 @@
+{% include 'partials/upperbody.html' %}
+
+<h1>Cron Login</h1>
+
+<form method="post" action="{% url 'cronjob:userLogin' %}">
+    {% csrf_token %}
+    {% for login in user_login %}
+        {{ login.label }}<br>
+        {{ login }}<br>
+    {% endfor %}
+    <input type="submit" value="Login">
+</form>
+
+{% include 'partials/lowerbody.html' %}

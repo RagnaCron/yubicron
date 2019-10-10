@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Web Cron</title>
-    {% load filters %}
-</head>
-<body>
+{% include 'partials/upperbody.html' %}
 
     <form method="post">
         {% csrf_token %}
@@ -86,5 +79,4 @@
         </section>
     </form>
 
-</body>
-</html>
+{% include 'partials/lowerbody.html' %}
