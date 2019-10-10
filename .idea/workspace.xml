@@ -2,8 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a6c3f724-2e45-49fb-97e0-181b523cd793" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/cronjob/static/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cronjob/static/cronjob/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cronjob/static/cronjob/godmode.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cronjob/templates/partials/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cronjob/templates/partials/lowerbody.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cronjob/templates/partials/upperbody.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cronjob/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/cronjob/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cronjob/templates/cronjob/cronhome.html" beforeDir="false" afterPath="$PROJECT_DIR$/cronjob/templates/cronjob/cronhome.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cronjob/templates/cronjob/cronjob.html" beforeDir="false" afterPath="$PROJECT_DIR$/cronjob/templates/cronjob/cronjob.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cronjob/templates/cronjob/cronuserlogin.html" beforeDir="false" afterPath="$PROJECT_DIR$/cronjob/templates/cronjob/cronuserlogin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cronjob/views/cronhomeview.py" beforeDir="false" afterPath="$PROJECT_DIR$/cronjob/views/cronhomeview.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cronjob/views/cronjobview.py" beforeDir="false" afterPath="$PROJECT_DIR$/cronjob/views/cronjobview.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cronjob/views/loginview.py" beforeDir="false" afterPath="$PROJECT_DIR$/cronjob/views/loginview.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,8 +30,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -78,16 +92,17 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../m133/dungeon" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/cronjob/templates" />
       <recent name="$PROJECT_DIR$/cronjob/views" />
       <recent name="$PROJECT_DIR$/.idea" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/cronjob/templatetags" />
-      <recent name="$PROJECT_DIR$/cronjob/statics" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -146,7 +161,8 @@
       <workItem from="1570567721427" duration="4468000" />
       <workItem from="1570595531230" duration="2911000" />
       <workItem from="1570601071883" duration="29037000" />
-      <workItem from="1570639967088" duration="11528000" />
+      <workItem from="1570639967088" duration="11829000" />
+      <workItem from="1570681438663" duration="2841000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1570458743703</created>
@@ -344,7 +360,14 @@
       <option name="project" value="LOCAL" />
       <updated>1570654143778</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="simple change">
+      <created>1570654273260</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1570654273260</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -449,6 +472,7 @@
     <MESSAGE value=".gitignore changes" />
     <MESSAGE value="login, cronhome setup" />
     <MESSAGE value="bound model to controller" />
-    <option name="LAST_COMMIT_MESSAGE" value="bound model to controller" />
+    <MESSAGE value="simple change" />
+    <option name="LAST_COMMIT_MESSAGE" value="simple change" />
   </component>
 </project>

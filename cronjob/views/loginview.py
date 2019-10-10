@@ -3,7 +3,8 @@ from django.shortcuts import redirect, render
 
 
 def userLogin(request):
-	context = {}
+	website_title = 'Cron Login'
+	context = {'website_title': website_title}
 	# if request.method == 'POST':
 	# 	username = request.POST['username']
 	# 	password = request.POST['password']

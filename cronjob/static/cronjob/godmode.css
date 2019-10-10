@@ -1,0 +1,17 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    background-color: #2E516B;
+    font-family: 'Roboto Mono', monospace;
+    color: #B8C0CF;
+    /*color: #B8C0CF;
+    #2E516B
+    #233446
+    background-color: #2B415A;
+*/
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}

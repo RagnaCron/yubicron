@@ -1,10 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Cron Home</title>
-</head>
-<body>
+{% include 'partials/upperbody.html' %}
 
-</body>
-</html>
+    <header>
+        <h1>This is the cron job website.</h1>
+        <section>
+            <p>You have to login to register you cron jobs. <a href="{% url 'cronjob:login' %}">Login</a></p>
+        </section>
+    </header>
+
+{% include 'partials/lowerbody.html' %}

@@ -11,6 +11,7 @@ from cronjob.models import CronJob
 
 @login_required(redirect_field_name='login', login_url='/login')
 def createCronJob(request):
+	website_title = 'Create Cron Job'
 	# TODO: - POST evaluation -> create model entry to CronJob
 	title = TitleForm(data=request.POST or None)
 	authenticate = AuthenticateForm(data=request.POST or None)
@@ -19,8 +20,8 @@ def createCronJob(request):
 	days = DaysFrom(data=request.POST or None)
 	user_message = UserMessageForm(data=request.POST or None)
 	general = GeneralForm(data=request.POST or None)
-	context = {'title': title, 'authenticate': authenticate, 'minutes': minutes,
-	           'hours': hours, 'days': days,
+	context = {'website_title': website_title, 'title': title, 'authenticate': authenticate,
+	           'minutes': minutes, 'hours': hours, 'days': days,
 	           'user_message': user_message, 'general': general}
 	if request.method == 'POST':
 		execution_time = calcSchedule(request, minutes, hours, days)
