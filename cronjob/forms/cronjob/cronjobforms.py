@@ -7,7 +7,7 @@ class TitleForm(forms.Form):
 
 
 class AuthenticateForm(forms.Form):
-	box = forms.BooleanField(required=False)
+	box = forms.BooleanField(required=False, label='Needs Authentication', label_suffix=' ')
 	username = forms.CharField(max_length=30, required=False,
 	                           label_suffix=' ', label='Username')
 	password = forms.CharField(max_length=20, widget=forms.PasswordInput,
@@ -28,6 +28,11 @@ class DaysFrom(forms.Form):
 	every_month_day = forms.IntegerField(min_value=1, max_value=31, initial=1, label_suffix=' ', required=False)
 	every_hours_day = forms.IntegerField(min_value=0, max_value=23, initial=0, label_suffix=' ', required=False)
 	every_minute_day = forms.IntegerField(min_value=0, max_value=59, initial=0, label_suffix=' ', required=False)
+
+
+class UserDefinedTimeForm(forms.Form):
+	user_defined = forms.CharField(min_length=9, max_length=20, initial='* * * * *',
+	                               label='User defined', label_suffix=' ')
 
 
 class UserMessageForm(forms.Form):
