@@ -26,20 +26,20 @@ def createCronJob(request):
 	if request.method == 'POST':
 		execution_time = calcSchedule(request, minutes, hours, days)
 		cron_job = CronJob(
-			user=auth.get_user(request).id,
-			title=title.title.clean(),
-			url=title.url.clean(),
-			needs_authentication=authenticate.box.clean(),
-			username=authenticate.username.clean(),
-			password=authenticate.password.clean(),
+			user=auth.get_user(request),
+			title=title['title'].value(),
+			url=title['url'].value(),
+			needs_authentication=authenticate['box'].value(),
+			username=authenticate['username'].value(),
+			password=authenticate['password'].value(),
 			execution_time=execution_time,
-			fail_message=user_message.failed_job.clean(),
-			success_message=user_message.successful_job,
-			automatic_job_stopper_when_to_many_failures=user_message.stop_job,
-			will_save_message=general.will_save_message
+			fail_message=user_message['failed_job'].value(),
+			success_message=user_message['successful_job'].value(),
+			automatic_job_stopper_when_to_many_failures=user_message['stop_job'].value(),
+			will_save_message=general['will_save_message'].value()
 		)
 		cron_job.save()
-		return redirect(request, 'cronjob/home.html', context)
+		return redirect('cronjob:home')
 
 	return render(request, 'cronjob/cronjob.html', context)
 
