@@ -23,4 +23,5 @@ class CronJob(models.Model):
 	will_save_message = models.BooleanField()
 
 	def __str__(self):
-		return 'Cron Job - Username: {0}, Cron job title: {1}'.format(self.user.username, self.title)
+		return 'Cron Job - Username: {0}, Cron job title: {1}, Cron Job Time: {2}'\
+			.format(self.user.username, self.title, self.execution_time)
