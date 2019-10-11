@@ -81,24 +81,24 @@ class CronJobFormsTest(TestCase):
 		self.assertFalse(days_false.is_valid())
 		self.assertTrue(days.is_valid())
 
-	def test_user_defined_cron_job_form(self):
-		# SHOULD ASSERT FALSE
-		cron_job0 = UserDefinedTimeForm(data={'user_defined': '69 * * * 0-1'})
-		self.assertFalse(cron_job0.is_valid())
-		cron_job1 = UserDefinedTimeForm(data={'user_defined': '0-1 * * * 0'})
-		self.assertFalse(cron_job1.is_valid())
-		cron_job2 = UserDefinedTimeForm(data={'user_defined': '69 * * * 0'})
-		self.assertFalse(cron_job2.is_valid())
-
-		# SHOULD ASSERT TRUE
-		cron_job3 = UserDefinedTimeForm(data={'user_defined': '* * * * *'})
-		self.assertTrue(cron_job3.is_valid())
-		cron_job4 = UserDefinedTimeForm(data={'user_defined': '0-4 * * * *'})
-		self.assertTrue(cron_job4.is_valid())
-		cron_job5 = UserDefinedTimeForm(data={'user_defined': '12-45 2,3-4 1-31 * 7'})
-		self.assertTrue(cron_job5.is_valid())
-		# cron_job6 = UserDefinedTimeForm(data={'user_defined': '*/45 2,3-4 */1-31 * 6'})
-		# self.assertTrue(cron_job6.is_valid())
+	# def test_user_defined_cron_job_form(self):
+	# 	# SHOULD ASSERT FALSE
+	# 	cron_job0 = UserDefinedTimeForm(data={'user_defined': '69 * * * 0-1'})
+	# 	self.assertFalse(cron_job0.is_valid())
+	# 	cron_job1 = UserDefinedTimeForm(data={'user_defined': '0-1 * * * 0'})
+	# 	self.assertFalse(cron_job1.is_valid())
+	# 	cron_job2 = UserDefinedTimeForm(data={'user_defined': '69 * * * 0'})
+	# 	self.assertFalse(cron_job2.is_valid())
+	#
+	# 	# SHOULD ASSERT TRUE
+	# 	cron_job3 = UserDefinedTimeForm(data={'user_defined': '* * * * *'})
+	# 	self.assertTrue(cron_job3.is_valid())
+	# 	cron_job4 = UserDefinedTimeForm(data={'user_defined': '0-4 * * * *'})
+	# 	self.assertTrue(cron_job4.is_valid())
+	# 	cron_job5 = UserDefinedTimeForm(data={'user_defined': '12-45 2,3-4 1-31 * 7'})
+	# 	self.assertTrue(cron_job5.is_valid())
+	# 	# cron_job6 = UserDefinedTimeForm(data={'user_defined': '*/45 2,3-4 */1-31 * 6'})
+	# 	# self.assertTrue(cron_job6.is_valid())
 
 	def test_user_message_from(self):
 		message = UserMessageForm(data={'failed_job': None, 'successful_job': False, 'stop_job': False})
