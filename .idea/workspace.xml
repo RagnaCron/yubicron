@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2287240f-642c-4c30-bf24-329befd1766b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cronjob/forms/cronjob/cronresetpasswordform.py" beforeDir="false" afterPath="$PROJECT_DIR$/cronjob/forms/cronjob/cronresetpasswordform.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cronjob/forms/cronjob/cronresetpasswordform.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cronjob/templates/cronjob/cronresetpassword.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cronjob/templates/partials/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/cronjob/templates/partials/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cronjob/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/cronjob/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cronjob/views/cronresetpassword.py" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -85,15 +88,15 @@
     <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/cronjob/static/cronjob" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/cronjob/templates" />
       <recent name="$PROJECT_DIR$/cronjob/views" />
       <recent name="$PROJECT_DIR$/.idea" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/cronjob/templatetags" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/cronjob/static/cronjob" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -492,7 +495,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="some stuff" />
     <MESSAGE value="Forms and interface to Model" />
     <MESSAGE value="Stuck in the middle" />
     <MESSAGE value="Implemented new Forms, changes to cronjob.html" />
@@ -517,6 +519,7 @@
     <MESSAGE value="More minor Styling" />
     <MESSAGE value="Messages" />
     <MESSAGE value="Reset Password, need real implementation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Reset Password, need real implementation" />
+    <MESSAGE value="stuck" />
+    <option name="LAST_COMMIT_MESSAGE" value="stuck" />
   </component>
 </project>

@@ -5,7 +5,6 @@
                 <div class="box_link">{{ user.username }}</div>
                 <a class="box_link" href="{% url 'cronjob:userLogout' %}">Logout</a>
             {% else %}
-                <a class="box_link" href="{% url 'cronjob:resetPassword' %}">Reset Password</a>
                 <a class="box_link" href="{% url 'cronjob:userLogin' %}">Login</a>
                 <a class="box_link" href="{% url 'cronjob:register' %}">Sign in</a>
             {% endif %}
