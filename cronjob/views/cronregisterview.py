@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, render_to_response
 from cronjob.forms.cronjob.cronusercreationform import MyUserCreationForm
 
 
-def register(request):
+def userRegistration(request):
 	website_title = 'Cron Signup'
 
 	if request.method == 'POST':

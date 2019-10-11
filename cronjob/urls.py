@@ -8,5 +8,5 @@ urlpatterns = [
     path('logout/', cronlogoutview.userLogout, name='userLogout'),
     path('create/', cronjobview.createCronJob, name='createCronJob'),
     path('login/', cronloginview.userLogin, name='userLogin'),
-    path('register/', cronregisterview.register, name='register'),
+    path('register/', cronregisterview.userRegistration, name='userRegistration'),
 ]
