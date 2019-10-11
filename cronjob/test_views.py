@@ -25,7 +25,15 @@ class TestLoginView(TestCase):
 		response = self.client.get(reverse('cronjob:userLogin'))
 		self.assertEqual(response.status_code, 200)
 		response = self.client.post(reverse('cronjob:userLogin'), **self.credentials)
-		self.assertTrue(self.client, response.status_code)
+		self.assertTrue(response.status_code, 200)
+
+	def test_userLogout(self):
+		response = self.client.get(reverse('cronjob:userLogin'))
+		self.assertEqual(response.status_code, 200)
+		response = self.client.post(reverse('cronjob:userLogin'), **self.credentials)
+		self.assertTrue(response.status_code, 200)
+		response = self.client.get(reverse('cronjob:userLogout'))
+		self.assertTrue(response.status_code, 200)
 
 # class LogInTest(TestCase):
 #     def setUp(self):
