@@ -1,4 +1,5 @@
 from django import forms
+from django.core.validators import RegexValidator
 
 
 class TitleForm(forms.Form):
@@ -15,7 +16,8 @@ class AuthenticateForm(forms.Form):
 
 
 class MinutesForm(forms.Form):
-	each_minute = forms.IntegerField(min_value=0, max_value=59, initial=0, label='Each', label_suffix=' ', required=False)
+	each_minute = forms.IntegerField(min_value=0, max_value=59, initial=0, label='Each', label_suffix=' ',
+	                                 required=False)
 
 
 class HoursFrom(forms.Form):
@@ -30,8 +32,16 @@ class DaysFrom(forms.Form):
 
 
 class UserDefinedTimeForm(forms.Form):
-	user_defined = forms.CharField(min_length=9, max_length=20, initial='* * * * *',
-	                               label='User defined', label_suffix=' ')
+	user_defined = forms.CharField(min_length=9, max_length=50, initial='* * * * *',
+	                               label='User defined', label_suffix=' ',
+	                               validators=[RegexValidator(
+		                               regex=
+		                               r'(\*(|[0-5]?[0-9]))\s'  # minutes
+		                               r'(\*|[01]?\d|2[0-3])\s'  # hours
+		                               r'(\*|0?[1-9]|[12]\d|3[01])\s'  # days
+		                               r'(\*|0?[1-9]|1[012])\s'  # months
+		                               r'(\*|[0-6](\-[0-6])?)'  # day of week
+	                               )])
 
 
 class UserMessageForm(forms.Form):

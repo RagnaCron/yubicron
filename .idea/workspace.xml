@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2287240f-642c-4c30-bf24-329befd1766b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/cronjob/forms/cronjob/cronresetpasswordform.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cronjob/templates/cronjob/cronresetpassword.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cronjob/templates/partials/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/cronjob/templates/partials/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cronjob/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/cronjob/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cronjob/views/cronresetpassword.py" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cronjob/forms/cronjob/cronjobforms.py" beforeDir="false" afterPath="$PROJECT_DIR$/cronjob/forms/cronjob/cronjobforms.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,8 +20,8 @@
       <list>
         <option value="CSS File" />
         <option value="JavaScript File" />
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -88,15 +86,15 @@
     <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/cronjob/static/cronjob" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/cronjob/templates" />
       <recent name="$PROJECT_DIR$/cronjob/views" />
       <recent name="$PROJECT_DIR$/.idea" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/cronjob/templatetags" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/cronjob/static/cronjob" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -111,7 +109,107 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Django tests.Test: cronjob.tests.CronJobFormsTest.test_user_defined_cron_job_form">
+    <configuration name="Test: cronjob.tests.CronJobFormsTest" type="DjangoTestsConfigurationType" temporary="true">
+      <module name="webcron" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="cronjob.tests.CronJobFormsTest" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test: cronjob.tests.CronJobFormsTest.test_user_defined_cron_job_form" type="DjangoTestsConfigurationType" temporary="true">
+      <module name="webcron" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="cronjob.tests.CronJobFormsTest.test_user_defined_cron_job_form" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test: cronjob.tests.CronJobFormsTest.test_user_message_from" type="DjangoTestsConfigurationType" temporary="true">
+      <module name="webcron" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="cronjob.tests.CronJobFormsTest.test_user_message_from" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test: cronjob.tests.CronJobTest.test_CronJob_Model" type="DjangoTestsConfigurationType" temporary="true">
+      <module name="webcron" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="cronjob.tests.CronJobTest.test_CronJob_Model" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test: cronjob.tests.FormsTests" type="DjangoTestsConfigurationType" temporary="true">
+      <module name="webcron" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="cronjob.tests.FormsTests" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="webcron" type="Python.DjangoServer" factoryName="Django server">
       <module name="webcron" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -136,6 +234,15 @@
       <option name="customRunCommand" value="" />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Django tests.Test: cronjob.tests.CronJobFormsTest.test_user_defined_cron_job_form" />
+        <item itemvalue="Django tests.Test: cronjob.tests.CronJobFormsTest.test_user_message_from" />
+        <item itemvalue="Django tests.Test: cronjob.tests.CronJobFormsTest" />
+        <item itemvalue="Django tests.Test: cronjob.tests.FormsTests" />
+        <item itemvalue="Django tests.Test: cronjob.tests.CronJobTest.test_CronJob_Model" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration>$USER_HOME$/.subversion</configuration>
@@ -160,6 +267,8 @@
       <workItem from="1570687002139" duration="10035000" />
       <workItem from="1570732455862" duration="12347000" />
       <workItem from="1570767913481" duration="1180000" />
+      <workItem from="1570786851413" duration="5411000" />
+      <workItem from="1570793398635" duration="56000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1570458743703</created>
@@ -413,7 +522,14 @@
       <option name="project" value="LOCAL" />
       <updated>1570745867040</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="stuck on cronjobs regex">
+      <created>1570791332177</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1570791332177</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -495,7 +611,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Forms and interface to Model" />
     <MESSAGE value="Stuck in the middle" />
     <MESSAGE value="Implemented new Forms, changes to cronjob.html" />
     <MESSAGE value="More forms" />
@@ -520,6 +635,20 @@
     <MESSAGE value="Messages" />
     <MESSAGE value="Reset Password, need real implementation" />
     <MESSAGE value="stuck" />
-    <option name="LAST_COMMIT_MESSAGE" value="stuck" />
+    <MESSAGE value="stuck on cronjobs regex" />
+    <option name="LAST_COMMIT_MESSAGE" value="stuck on cronjobs regex" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/webcron$Test__cronjob_tests_FormsTests_test_all_Forms.coverage" NAME="Test: cronjob.tests.FormsTests.test_all_Forms Coverage Results" MODIFIED="1570781873312" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/webcron$Test__cronjob_tests_FormsTests.coverage" NAME="Test: cronjob.tests.FormsTests Coverage Results" MODIFIED="1570786907897" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/webcron$Test__cronjob_tests_CronJobTest.coverage" NAME="Test: cronjob.tests.CronJobTest Coverage Results" MODIFIED="1570786902129" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/webcron$Test__cronjob_tests_CronJobFormsTest_test_user_defined_cron_job_form.coverage" NAME="Test: cronjob.tests.CronJobFormsTest.test_user_defined_cron_job_form Coverage Results" MODIFIED="1570791405727" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/webcron$Test__cronjob_tests_FormsTests_test_user_defined_cron_job.coverage" NAME="Test: cronjob.tests.FormsTests.test_user_defined_cron_job Coverage Results" MODIFIED="1570785784839" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/webcron$Test__cronjob_tests_CronJobTest_test_CronJob_Model.coverage" NAME="Test: cronjob.tests.CronJobTest.test_CronJob_Model Coverage Results" MODIFIED="1570786905138" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/webcron$Test__cronjob_tests_FormsTests_test_general_form.coverage" NAME="Test: cronjob.tests.FormsTests.test_general_form Coverage Results" MODIFIED="1570786853113" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/webcron$Test__cronjob_tests_FormsTests_test_user_message_from.coverage" NAME="Test: cronjob.tests.FormsTests.test_user_message_from Coverage Results" MODIFIED="1570786519320" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/webcron$Test__cronjob_tests_CronJobFormsTest.coverage" NAME="Test: cronjob.tests.CronJobFormsTest Coverage Results" MODIFIED="1570786937017" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/webcron$Test__cronjob_tests_CronJobFormsTest_test_user_message_from.coverage" NAME="Test: cronjob.tests.CronJobFormsTest.test_user_message_from Coverage Results" MODIFIED="1570789468434" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/webcron$Test__cronjob_tests_CalculateScheduleTest.coverage" NAME="Test: cronjob.tests.CalculateScheduleTest Coverage Results" MODIFIED="1570780656462" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
 </project>
