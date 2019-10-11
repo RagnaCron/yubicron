@@ -1,3 +1,4 @@
+django
 django 2.2.5
 Brlapi	0.6.7
 Python 3.7.4
