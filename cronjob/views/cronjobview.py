@@ -39,7 +39,7 @@ def createCronJob(request):
 			will_save_message=general['will_save_message'].value()
 		)
 		cron_job.save()
-		return render_to_response('cronjob/cronhome.html', {'message': 'You have created a Cron Job.'})
+		return render(request, 'cronjob/cronhome.html', {'message': 'You have created a Cron Job.'})
 
 	return render(request, 'cronjob/cronjob.html', context)
 
