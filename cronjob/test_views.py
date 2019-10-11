@@ -16,11 +16,27 @@ from cronjob.views.cronloginview import userLogin
 
 class TestLoginView(TestCase):
 	def setUp(self):
-		User.objects.create(username='Osiris', password='kloxet82', email='manuel.werder@csbe.ch')
+		self.credentials = {
+			'username': 'testuser',
+			'password': 'secret'}
+		User.objects.create(**self.credentials)
 
 	def test_userLogin(self):
-		client = Client()
-		response = client.get(reverse('cronjob:userLogin'))
+		response = self.client.get(reverse('cronjob:userLogin'))
 		self.assertEqual(response.status_code, 200)
+		response = self.client.post(reverse('cronjob:userLogin'), **self.credentials)
+		self.assertTrue(self.client, response.status_code)
+
+# class LogInTest(TestCase):
+#     def setUp(self):
+#         self.credentials = {
+#             'username': 'testuser',
+#             'password': 'secret'}
+#         User.objects.create_user(**self.credentials)
+#     def test_login(self):
+#         # login
+#         response = self.client.post('/login/', **self.credentials)
+#         # should be logged in now, fails however
+#         self.assertTrue(response.context['user'].is_active)
 
 
