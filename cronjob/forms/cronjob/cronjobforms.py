@@ -35,11 +35,12 @@ class UserDefinedTimeForm(forms.Form):
 	user_defined = forms.CharField(min_length=9, max_length=50, initial='* * * * *',
 	                               label='User defined', label_suffix=' ',
 	                               validators=[RegexValidator(
-		                               regex=r'\A((\*|[0-5]?\d?|\*/[0-5]?\d)\s'  # minutes
-		                                     r'(\*|[01]?\d|2[0-3])\s'  # hours 
-		                                     r'(\*|0?[1-9]|[12]\d|3[01])\s'  # days
-		                                     r'(\*|0?[1-9]|1[012])\s'  # months
-		                                     r'(\*|[0-6](\-[0-6])?))\Z'  # day of week
+		                               regex=
+		                               r'(\*(|[0-5]?[0-9]))\s'  # minutes
+		                               r'(\*|[01]?\d|2[0-3])\s'  # hours
+		                               r'(\*|0?[1-9]|[12]\d|3[01])\s'  # days
+		                               r'(\*|0?[1-9]|1[012])\s'  # months
+		                               r'(\*|[0-6](\-[0-6])?)'  # day of week
 	                               )])
 
 
