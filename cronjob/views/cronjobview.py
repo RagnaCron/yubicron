@@ -1,6 +1,6 @@
 from django.contrib import auth
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, render_to_response
 from cronjob.forms.cronjob.cronjobforms import AuthenticateForm, TitleForm, UserMessageForm, GeneralForm
 from cronjob.forms.cronjob.cronjobforms import MinutesForm, HoursFrom, DaysFrom, UserDefinedTimeForm
 from cronjob.models import CronJob
@@ -12,7 +12,6 @@ from cronjob.models import CronJob
 @login_required(redirect_field_name='userLogin', login_url='/login')
 def createCronJob(request):
 	website_title = 'Create Cron Job'
-	# TODO: - POST evaluation -> create model entry to CronJob
 	title = TitleForm(data=request.POST or None)
 	authenticate = AuthenticateForm(data=request.POST or None)
 	minutes = MinutesForm(data=request.POST or None)
@@ -40,7 +39,7 @@ def createCronJob(request):
 			will_save_message=general['will_save_message'].value()
 		)
 		cron_job.save()
-		return redirect('cronjob:home')
+		return render_to_response('cronjob/cronhome.html', {'message': 'You have created a Cron Job.'})
 
 	return render(request, 'cronjob/cronjob.html', context)
 

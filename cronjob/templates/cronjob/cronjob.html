@@ -10,27 +10,20 @@
         <form class="inner_input" method="post" action="{% url 'cronjob:createCronJob' %}">
             {% csrf_token %}
 
-            <section>
-                <h3>Title, Address</h3>
-                {% for tag in title %}
-                    {{ tag.label_tag }}
-                    {{ tag }}
-                {% endfor %}
-            </section>
+            <h3>Title, Address</h3>
+            {% for tag in title %}
+                {{ tag.label_tag }}
+                {{ tag }}
+            {% endfor %}
 
-            <section>
-
-                {% for form in authenticate %}
-                    {% ifequal form.id_for_label 'id_box' %}
-                        <h3>{{ form }} {{ form.label_tag }}</h3>
-                    {% else %}
-                        {{ form.label_tag }}<br>
-                        {{ form }}
-                        <br><br>
-                    {% endifequal %}
-                {% endfor %}
-
-            </section>
+            {% for form in authenticate %}
+                {% ifequal form.id_for_label 'id_box' %}
+                    <h3>{{ form }} {{ form.label_tag }}</h3>
+                {% else %}
+                    {{ form.label_tag }}
+                    {{ form }}
+                {% endifequal %}
+            {% endfor %}
 
             <section>
 
@@ -74,13 +67,11 @@
 
             </section>
 
-{#            <section>#}
-                <h3>General</h3>
-                <div>
-                    {{ general.will_save_message }}
-                    <label for="{{ general.will_save_message.id_for_label }}">Save message</label>
-                </div>
-{#            </section>#}
+            <h3>General</h3>
+            <div>
+                {{ general.will_save_message }}
+                <label for="{{ general.will_save_message.id_for_label }}">Save message</label>
+            </div>
             <br>
 
             <strong><p>By submitting you submit to the cron police.</p></strong>

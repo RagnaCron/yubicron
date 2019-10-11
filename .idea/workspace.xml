@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2287240f-642c-4c30-bf24-329befd1766b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cronjob/forms/cronjob/cronjobforms.py" beforeDir="false" afterPath="$PROJECT_DIR$/cronjob/forms/cronjob/cronjobforms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cronjob/forms/cronjob/cronusercreationform.py" beforeDir="false" afterPath="$PROJECT_DIR$/cronjob/forms/cronjob/cronusercreationform.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cronjob/templates/cronjob/cronjob.html" beforeDir="false" afterPath="$PROJECT_DIR$/cronjob/templates/cronjob/cronjob.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cronjob/forms/cronjob/cronresetpasswordform.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cronjob/templates/cronjob/cronresetpassword.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cronjob/templates/partials/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/cronjob/templates/partials/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cronjob/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/cronjob/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cronjob/views/cronresetpassword.py" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,10 +20,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
-        <option value="Python Script" />
         <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -88,15 +88,15 @@
     <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/cronjob/static/cronjob" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/cronjob/templates" />
       <recent name="$PROJECT_DIR$/cronjob/views" />
       <recent name="$PROJECT_DIR$/.idea" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/cronjob/templatetags" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/cronjob/static/cronjob" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -142,7 +142,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="a6c3f724-2e45-49fb-97e0-181b523cd793" name="Default Changelist" comment="" />
+      <changelist id="2287240f-642c-4c30-bf24-329befd1766b" name="Default Changelist" comment="" />
       <created>1570457837404</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -158,6 +158,8 @@
       <workItem from="1570639967088" duration="11829000" />
       <workItem from="1570681438663" duration="3447000" />
       <workItem from="1570687002139" duration="10035000" />
+      <workItem from="1570732455862" duration="12347000" />
+      <workItem from="1570767913481" duration="1180000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1570458743703</created>
@@ -390,7 +392,28 @@
       <option name="project" value="LOCAL" />
       <updated>1570717369885</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="More minor Styling">
+      <created>1570719178802</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1570719178802</updated>
+    </task>
+    <task id="LOCAL-00035" summary="Messages">
+      <created>1570736188839</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1570736188839</updated>
+    </task>
+    <task id="LOCAL-00036" summary="Reset Password, need real implementation">
+      <created>1570745867040</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1570745867040</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -472,10 +495,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="gitignore more changes" />
-    <MESSAGE value="Added Model CronJob" />
-    <MESSAGE value="layout done" />
-    <MESSAGE value="some stuff" />
     <MESSAGE value="Forms and interface to Model" />
     <MESSAGE value="Stuck in the middle" />
     <MESSAGE value="Implemented new Forms, changes to cronjob.html" />
@@ -497,6 +516,10 @@
     <MESSAGE value="user registration, login, logout and forms" />
     <MESSAGE value="More Styling" />
     <MESSAGE value="Minor Styling" />
-    <option name="LAST_COMMIT_MESSAGE" value="Minor Styling" />
+    <MESSAGE value="More minor Styling" />
+    <MESSAGE value="Messages" />
+    <MESSAGE value="Reset Password, need real implementation" />
+    <MESSAGE value="stuck" />
+    <option name="LAST_COMMIT_MESSAGE" value="stuck" />
   </component>
 </project>
