@@ -19,6 +19,12 @@ class TestLoginView(TestCase):
 		self.credentials = {
 			'username': 'testuser',
 			'password': 'secret'}
+		self.credentials2 = {
+			'username': 'testmuser',
+			'email': 'manuel.werder@csbe.ch',
+			'password1': 'secret',
+			'password2': 'secret',
+		}
 		User.objects.create(**self.credentials)
 
 	def test_userLogin(self):
@@ -32,5 +38,11 @@ class TestLoginView(TestCase):
 		self.assertEqual(response.status_code, 200)
 		response = self.client.post(reverse('cronjob:userLogin'), **self.credentials)
 		self.assertTrue(response.status_code, 200)
-		response = self.client.get(reverse('cronjob:userLogout'))
+		response = self.client.post(reverse('cronjob:userLogout'))
 		self.assertTrue(response.status_code, 200)
+
+	def test_homeView(self):
+		response = self.client.get(reverse('cronjob:home'))
+		self.assertEqual(response.status_code, 200)
+
+
