@@ -1,6 +1,10 @@
-{% include 'partials/upperbody.html' %}
 
-{% include 'partials/header.html' %}
+
+{% extends 'cronjob/cronbase.html' %}
+{% block title %}Cron Home{% endblock %}
+{% block content %}
+
+    {% include 'cronjob/cronheader.html' %}
 
     <section class="basic_layout">
         <div class="center_layout">
@@ -20,5 +24,4 @@
 
         </div>
     </section>
-
-{% include 'partials/lowerbody.html' %}
+{% endblock %}

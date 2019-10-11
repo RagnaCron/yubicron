@@ -1,11 +1,9 @@
 from django.contrib.auth import login, authenticate
-from django.shortcuts import render, render_to_response
+from django.shortcuts import render
 from cronjob.forms.cronjob.cronloginform import CronLoginForm
 
 
 def userLogin(request):
-	website_title = 'Cron Login'
-
 	if request.method == 'POST':
 		user_login = CronLoginForm(request.POST)
 		if user_login.is_valid():
@@ -21,5 +19,5 @@ def userLogin(request):
 	else:
 		user_login = CronLoginForm()
 		error = user_login.errors
-	context = {'website_title': website_title, 'user_login': user_login, 'error': error, }
+	context = {'user_login': user_login, 'error': error, }
 	return render(request, 'cronjob/cronuserlogin.html', context=context)

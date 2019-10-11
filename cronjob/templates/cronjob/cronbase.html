@@ -1,15 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
 
+    <meta charset="UTF-8">
     {% load static %}
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono:500&display=swap&subset=latin-ext">
 
     {% load static %}
     <link rel="stylesheet" href="{% static 'cronjob/godmode.css' %}">
 
-    <title>{{ website_title }}</title>
+    <title>{% block title %}{% endblock %}</title>
 
 </head>
-<body>
+    <body>
+
+        {% block content %}{% endblock %}
+
+    </body>
+</html>

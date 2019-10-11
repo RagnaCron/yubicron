@@ -1,23 +1,23 @@
-{% include 'partials/upperbody.html' %}
+{% extends 'cronjob/cronbase.html' %}
+{% block title %}Cron Login{% endblock %}
+{% block content %}
+    <a class="exit" href="{% url 'cronjob:home' %}" xmlns="http://www.w3.org/1999/html"><strong>Quit</strong></a>
 
-<a class="exit" href="{% url 'cronjob:home' %}" xmlns="http://www.w3.org/1999/html"><strong>Quit</strong></a>
+    <section class="basic_layout">
+        <div class="inner_layout">
+            <p>{{ error }}</p>
+            <h1>Cron Login</h1>
+            <form class="inner_input" method="post" action="{% url 'cronjob:userLogin' %}">
+                {% csrf_token %}
+                    {% for login in user_login %}
+                        {{ login.label }}<br>
+                        {{ login }}<br>
+                    {% endfor %}
+                <br>
+                <input class="button" type="submit" value="Login">
+            </form>
 
-<section class="basic_layout">
-    <div class="inner_layout">
-        <p>{{ error }}</p>
-        <h1>Cron Login</h1>
-        <form class="inner_input" method="post" action="{% url 'cronjob:userLogin' %}">
-            {% csrf_token %}
-                {% for login in user_login %}
-                    {{ login.label }}<br>
-                    {{ login }}<br>
-                {% endfor %}
-            <br>
-            <input class="button" type="submit" value="Login">
-        </form>
+        </div>
 
-    </div>
-
-</section>
-
-{% include 'partials/lowerbody.html' %}
+    </section>
+{% endblock %}
