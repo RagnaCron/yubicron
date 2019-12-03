@@ -1,5 +1,7 @@
 from django import forms
-from django.core.exceptions import ValidationError
+from django.core.exceptions import ValidationError, ObjectDoesNotExist
+
+from cronjob.models import YubiKeyModel
 
 
 class CronLoginForm(forms.Form):
@@ -14,7 +16,9 @@ class CronLoginForm(forms.Form):
 		return yubicron
 
 	def valid_yubi(self):
-		yubi = YubiKeyModel.yubi_key
+		try:
+			yubi = YubiKeyModel.objects.filter(yubi_key=self.clean_yubicron()[:12])
+		except ObjectDoesNotExist:
+			raise ValidationError("Enter 'your' Yubikey.")
 		if self.clean_yubicron()[:12] == yubi:
 			return yubi
-		raise ValidationError("Enter 'your' Yubikey.")
