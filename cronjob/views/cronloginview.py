@@ -6,6 +6,7 @@ from cronjob.forms.cronjob.cronloginform import CronLoginForm
 def userLogin(request):
 	if request.method == 'POST':
 		user_login = CronLoginForm(request.POST)
+		# todo: otp yubikey
 		if user_login.is_valid():
 			username = user_login.cleaned_data.get('username')
 			password = user_login.cleaned_data.get('password')

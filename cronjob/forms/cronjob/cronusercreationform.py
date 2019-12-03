@@ -10,6 +10,13 @@ class MyUserCreationForm(forms.Form):
     email = forms.EmailField(label='Enter email', label_suffix='')
     password1 = forms.CharField(label='Enter password', widget=forms.PasswordInput, label_suffix='')
     password2 = forms.CharField(label='Confirm password', widget=forms.PasswordInput, label_suffix='')
+    yubicron = forms.CharField(label='Yubikey', widget=forms.PasswordInput, label_suffix='', max_length=44)
+
+    def clean_yubicron(self):
+        yubicron = self.cleaned_data['yubicron']
+        if len(yubicron) < 44:
+            raise ValidationError("Press your yubikey for all 44 chars")
+        return yubicron
 
     def clean_username(self):
         username = self.cleaned_data['username'].lower()
@@ -33,7 +40,7 @@ class MyUserCreationForm(forms.Form):
             raise ValidationError("Password don't match")
         return password2
 
-    def save(self, commit=True):
+    def save(self):
         user = User.objects.create_user(
             self.cleaned_data['username'],
             self.cleaned_data['email'],

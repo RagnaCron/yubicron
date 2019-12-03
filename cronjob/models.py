@@ -4,6 +4,11 @@ from django.db import models
 # Create your models here.
 
 
+class YubiKey(models.Model):
+	user = models.ForeignKey(User, on_delete=models.CASCADE)
+	yubi_key = models.CharField(max_length=12)
+
+
 class CronJob(models.Model):
 	user = models.ForeignKey(User, on_delete=models.CASCADE)
 
