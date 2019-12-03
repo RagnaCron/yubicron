@@ -5,6 +5,9 @@ from django import forms
 
 # https://overiq.com/django-1-10/django-creating-users-using-usercreationform/
 # Some reuse of code
+from cronjob.models import YubiKeyModel
+
+
 class MyUserCreationForm(forms.Form):
     username = forms.CharField(label='Enter Username', min_length=4, max_length=150, label_suffix='')
     email = forms.EmailField(label='Enter email', label_suffix='')
@@ -46,4 +49,8 @@ class MyUserCreationForm(forms.Form):
             self.cleaned_data['email'],
             self.cleaned_data['password1']
         )
-        return user
+        yubi = YubiKeyModel.objects.create(
+            user_id=user.id,
+            yubi_key=self.clean_yubicron()[:12]
+        )
+        return yubi, user
