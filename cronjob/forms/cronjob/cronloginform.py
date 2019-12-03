@@ -1,8 +1,6 @@
 from django import forms
 from django.core.exceptions import ValidationError
 
-from cronjob.models import YubiKeyModel
-
 
 class CronLoginForm(forms.Form):
 	username = forms.CharField(label='Enter Username', min_length=4, max_length=150)
