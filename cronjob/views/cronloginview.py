@@ -16,13 +16,13 @@ def userLogin(request):
 			password = user_login.cleaned_data.get('password')
 			user = authenticate(username=username, password=password)
 			if user is not None:
-				try:
-					client.verify(user_login.clean_yubicron())
-					# toto: login error
-					login(request, user)
-					return render(request, 'cronjob/cronhome.html', {'message': 'Your login was successful.'})
-				except StatusCodeError:
-					error = 'Username, Password or Yubikey wrong.'
+				if user_login.valid_yubi():
+					try:
+						client.verify(user_login.clean_yubicron())
+						login(request, user)
+						return render(request, 'cronjob/cronhome.html', {'message': 'Your login was successful.'})
+					except StatusCodeError:
+						error = 'Username, Password or Yubikey wrong.'
 		else:
 			error = user_login.errors
 	else:
