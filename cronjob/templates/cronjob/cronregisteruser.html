@@ -1,6 +1,6 @@
 
 {% extends 'cronjob/cronbase.html' %}
-{% block title %}Cron Sing in{% endblock %}
+{% block title %}Cron Sing in{% endblock title %}
 {% block content %}
     <a class="exit" href="{% url 'cronjob:home' %}"><strong>Quit</strong></a>
 
@@ -21,6 +21,6 @@
 
         </div>
     </section>
-{% endblock %}
+{% endblock content %}
 
 

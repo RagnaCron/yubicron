@@ -1,5 +1,5 @@
 {% extends 'cronjob/cronbase.html' %}
-{% block title %}Cron Login{% endblock %}
+{% block title %}Cron Login{% endblock title %}
 {% block content %}
     <a class="exit" href="{% url 'cronjob:home' %}" xmlns="http://www.w3.org/1999/html"><strong>Quit</strong></a>
 
@@ -7,6 +7,7 @@
         <div class="inner_layout">
             <p>{{ error }}</p>
             <h1>Cron Login</h1>
+
             <form class="inner_input" method="post" action="{% url 'cronjob:userLogin' %}">
                 {% csrf_token %}
                     {% for login in user_login %}
@@ -20,4 +21,4 @@
         </div>
 
     </section>
-{% endblock %}
+{% endblock  content%}
