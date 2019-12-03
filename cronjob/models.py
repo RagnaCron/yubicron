@@ -4,7 +4,7 @@ from django.db import models
 # Create your models here.
 
 
-class YubiKey(models.Model):
+class YubiKeyModel(models.Model):
 	user = models.ForeignKey(User, on_delete=models.CASCADE)
 	yubi_key = models.CharField(max_length=12)
 

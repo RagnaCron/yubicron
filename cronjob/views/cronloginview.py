@@ -1,20 +1,36 @@
 from django.contrib.auth import login, authenticate
+from django.core.exceptions import ValidationError
 from django.shortcuts import render
+from yubico_client import Yubico
+from yubico_client.yubico_exceptions import StatusCodeError, SignatureVerificationError, InvalidClientIdError
+
 from cronjob.forms.cronjob.cronloginform import CronLoginForm
 
 
+# noinspection PyBroadException
 def userLogin(request):
+	client = Yubico('50927', 'VNiJHml4DqqTjQFeu5yvrbtM97U=')
+	error = ''
 	if request.method == 'POST':
 		user_login = CronLoginForm(request.POST)
-		# todo: otp yubikey
 		if user_login.is_valid():
 			username = user_login.cleaned_data.get('username')
 			password = user_login.cleaned_data.get('password')
 			user = authenticate(username=username, password=password)
 			if user is not None:
-				login(request, user)
-				return render(request, 'cronjob/cronhome.html', {'message': 'Your login was successful.'})
-			error = 'Username or Password wrong.'
+				try:
+					user_login.valid_yubi()
+					try:
+						client.verify(user_login.clean_yubicron())
+						login(request, user)
+						return render(request, 'cronjob/cronhome.html', {'message': 'Your login was successful.'})
+					except Exception:
+						error = 'Wrong Yubikey'
+				except ValidationError as er:
+					error = er
+			else:
+				error = 'Wrong username or password'
+
 		else:
 			error = user_login.errors
 	else:
