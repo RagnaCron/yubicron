@@ -4,5 +4,5 @@ register = template.Library()
 
 
 @register.filter
-def intRange(minimum):
+def int_range(minimum):
 	return range(minimum)
